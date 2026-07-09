@@ -16,7 +16,7 @@ import Toast from './components/ui/Toast'
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <CartProvider>
       <div className="min-h-screen flex flex-col">
         <Navbar />
