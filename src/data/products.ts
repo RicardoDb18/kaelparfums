@@ -157,7 +157,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 167,
+    images: ['images/kenzo.webp'], rating: 4.5, reviews: 167,
   },
   {
     id: 'd4',
@@ -431,7 +431,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.6, reviews: 345, isNew: true,
+    images: ['images/untold.webp'], rating: 4.6, reviews: 345, isNew: true,
   },
   {
     id: 'a11',
@@ -448,7 +448,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 234,
+    images: ['images/urbanman.webp'], rating: 4.5, reviews: 234,
   },
   {
     id: 'a12',
@@ -465,7 +465,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.4, reviews: 198,
+    images: ['images/cdnwoman.webp'], rating: 4.4, reviews: 198,
   },
   {
     id: 'a13',
@@ -482,7 +482,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 167, isNew: true,
+    images: ['images/sceptre.webp'], rating: 4.5, reviews: 167, isNew: true,
   },
   {
     id: 'a14',
@@ -499,7 +499,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.6, reviews: 212, isNew: true,
+    images: ['images/ice.webp'], rating: 4.6, reviews: 212, isNew: true,
   },
   {
     id: 'a15',
@@ -669,7 +669,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 189, isNew: true,
+    images: ['images/nitro.webp'], rating: 4.5, reviews: 189, isNew: true,
   },
   {
     id: 'a25',
@@ -686,6 +686,6 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 145, isNew: true,
+    images: ['images/daiman.webp'], rating: 4.5, reviews: 145, isNew: true,
   },
 ]

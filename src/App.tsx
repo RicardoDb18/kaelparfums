@@ -1,5 +1,12 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
 import Navbar from './components/layout/Navbar'
+
+function ScrollToTop() {
+  const { pathname } = useLocation()
+  useEffect(() => { window.scrollTo(0, 0) }, [pathname])
+  return null
+}
 import Footer from './components/layout/Footer'
 import Home from './pages/Home'
 import Shop from './pages/Shop'
@@ -17,6 +24,7 @@ import Toast from './components/ui/Toast'
 function App() {
   return (
     <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <ScrollToTop />
       <CartProvider>
       <div className="min-h-screen flex flex-col">
         <Navbar />

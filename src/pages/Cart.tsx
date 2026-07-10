@@ -57,11 +57,11 @@ export default function Cart() {
 
         <div className="space-y-4 mb-10">
           {items.map((item, i) => (
-            <div key={i} className="flex items-center gap-4 p-4 bg-white rounded-xl border border-black/5">
-              <div className="w-16 h-16 rounded-lg bg-black flex items-center justify-center shrink-0">
-                <span className="text-white/10 text-xl font-display font-bold">{item.product.brand.charAt(0)}</span>
+            <div key={i} className="flex flex-col sm:flex-row items-start sm:items-center gap-4 p-4 bg-white rounded-xl border border-black/5">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 rounded-lg bg-black flex items-center justify-center shrink-0">
+                <span className="text-white/10 text-lg sm:text-xl font-display font-bold">{item.product.brand.charAt(0)}</span>
               </div>
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 w-full sm:w-auto">
                 <Link to={`/product/${item.product.id}`} className="font-display font-semibold text-black hover:text-gold transition-colors">
                   {item.product.name}
                 </Link>
@@ -70,36 +70,38 @@ export default function Cart() {
                 </p>
                 <p className="text-sm font-medium text-gold mt-1">S/{item.price.toFixed(2)}</p>
               </div>
-              <div className="flex items-center border border-black/10 rounded-lg">
-                <button
-                  onClick={() => updateQuantity(i, item.quantity - 1)}
-                  className="px-2.5 py-1.5 text-black/40 hover:text-black transition-colors text-sm"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
-                  </svg>
-                </button>
-                <span className="px-3 py-1.5 font-medium text-black text-sm min-w-[2rem] text-center">{item.quantity}</span>
-                <button
-                  onClick={() => updateQuantity(i, item.quantity + 1)}
-                  className="px-2.5 py-1.5 text-black/40 hover:text-black transition-colors text-sm"
-                >
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+              <div className="flex items-center justify-between sm:justify-start w-full sm:w-auto gap-4 sm:gap-0">
+                <div className="flex items-center border border-black/10 rounded-lg">
+                  <button
+                    onClick={() => updateQuantity(i, item.quantity - 1)}
+                    className="px-2.5 py-1.5 text-black/40 hover:text-black transition-colors text-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                    </svg>
+                  </button>
+                  <span className="px-3 py-1.5 font-medium text-black text-sm min-w-[2rem] text-center">{item.quantity}</span>
+                  <button
+                    onClick={() => updateQuantity(i, item.quantity + 1)}
+                    className="px-2.5 py-1.5 text-black/40 hover:text-black transition-colors text-sm"
+                  >
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                    </svg>
+                  </button>
+                </div>
+                <p className="font-semibold text-black sm:min-w-[5rem] text-right">S/{(item.price * item.quantity).toFixed(2)}</p>
+                <button onClick={() => removeFromCart(i)} className="p-1.5 text-black/20 hover:text-black/60 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
                   </svg>
                 </button>
               </div>
-              <p className="font-semibold text-black min-w-[5rem] text-right">S/{(item.price * item.quantity).toFixed(2)}</p>
-              <button onClick={() => removeFromCart(i)} className="p-1.5 text-black/20 hover:text-black/60 transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
-                </svg>
-              </button>
             </div>
           ))}
         </div>
 
-        <div className="max-w-md ml-auto">
+        <div className="max-w-md sm:ml-auto w-full">
           <div className="bg-zinc-50 rounded-2xl border border-black/5 p-6 space-y-3">
             <div className="flex justify-between text-sm">
               <span className="text-black/50">Subtotal</span>
