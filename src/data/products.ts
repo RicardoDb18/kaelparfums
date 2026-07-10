@@ -132,7 +132,7 @@ export const products: Product[] = [
     description: 'Una fragancia femenina vibrante con pera, jazmín, azahar y vainilla. Fresca, floral y sofisticada.',
     notes: ['Pera', 'Jazmín', 'Azahar', 'Vainilla', 'Almizcle', 'Madera de cachemira'],
     categoryType: 'disenador',
-    gender: 'femenino',
+    gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
         { ml: 3, price: 23, inStock: true },
@@ -140,7 +140,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: [], rating: 4.6, reviews: 189, isNew: true,
+    images: ['images/coral.webp'], rating: 4.6, reviews: 189, isNew: true,
   },
   {
     id: 'd3',
@@ -174,7 +174,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: [], rating: 4.6, reviews: 298, isNew: true,
+    images: ['images/tmwparfum.webp'], rating: 4.6, reviews: 298, isNew: true,
   },
   {
     id: 'd5',
@@ -191,7 +191,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: [], rating: 4.7, reviews: 356, isNew: true,
+    images: ['images/swyi.webp'], rating: 4.7, reviews: 356, isNew: true,
   },
   {
     id: 'd6',
@@ -397,7 +397,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.7, reviews: 412, isNew: true,
+    images: ['images/kamrah.webp'], rating: 4.7, reviews: 412, isNew: true,
   },
   {
     id: 'a9',
@@ -414,7 +414,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.8, reviews: 289, isNew: true,
+    images: ['images/qahwa.webp'], rating: 4.8, reviews: 289, isNew: true,
   },
   {
     id: 'a10',
