@@ -13,7 +13,7 @@ export const brands: Brand[] = [
   { id: '10', name: 'Lattafa', logo: '', description: 'Perfumería árabe de alta calidad', slug: 'lattafa' },
   { id: '11', name: 'Armaf', logo: '', description: 'Perfumería árabe moderna', slug: 'armaf' },
   { id: '12', name: 'Afnan', logo: '', description: 'Perfumería árabe contemporánea', slug: 'afnan' },
-  { id: '15', name: 'Rasasi', logo: '', description: 'Perfumería árabe tradicional', slug: 'rasasi' },
+  { id: '13', name: 'Rasasi', logo: '', description: 'Perfumería árabe tradicional', slug: 'rasasi' },
   { id: '14', name: 'Al Haramain', logo: '', description: 'Perfumería árabe de lujo', slug: 'al-haramain' },
   { id: '15', name: 'Maison Alhambra', logo: '', description: 'Perfumería árabe contemporánea', slug: 'maison-alhambra' },
   { id: '16', name: 'Zimaya', logo: '', description: 'Perfumería árabe contemporánea', slug: 'zimaya' },
@@ -37,7 +37,7 @@ export const products: Product[] = [
         { ml: 100, price: 750, inStock: true },
       ]},
     ],
-    images: ['images/erbapura.webp'], rating: 4.8, reviews: 312, isNew: true,
+    images: ['images/erbapura.webp'], rating: 4.8, reviews: 312, isNew: false,
   },
   {
     id: '2',
@@ -55,7 +55,7 @@ export const products: Product[] = [
         { ml: 100, price: 450, inStock: true },
       ]},
     ],
-    images: ['images/tonka.webp'], rating: 4.7, reviews: 245, isNew: true,
+    images: ['images/tonka.webp'], rating: 4.7, reviews: 245, isNew: false,
   },
   {
     id: '3',
@@ -73,7 +73,7 @@ export const products: Product[] = [
         { ml: 120, price: 500, inStock: true },
       ]},
     ],
-    images: ['images/french.webp'], rating: 4.6, reviews: 178,
+    images: ['images/french.webp'], rating: 4.6, reviews: 178, isNew: true,
   },
   {
     id: '4',
@@ -126,7 +126,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: ['images/valentinobirint.webp'], rating: 4.7, reviews: 234, isNew: true,
+    images: ['images/valentinobirint.webp'], rating: 4.7, reviews: 234, isNew: false,
   },
   {
     id: 'd2',
@@ -143,7 +143,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: ['images/coral.webp'], rating: 4.6, reviews: 209, isNew: true,
+    images: ['images/coral.webp'], rating: 4.6, reviews: 209, isNew: false,
   },
   {
     id: 'd3',
@@ -177,7 +177,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: ['images/tmwparfum.webp'], rating: 4.6, reviews: 298, isNew: true,
+    images: ['images/tmwparfum.webp'], rating: 4.6, reviews: 298, isNew: false,
   },
   {
     id: 'd5',
@@ -194,7 +194,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: ['images/swyi.webp'], rating: 4.7, reviews: 356, isNew: true,
+    images: ['images/swyi.webp'], rating: 4.7, reviews: 356, isNew: false,
   },
   {
     id: 'd6',
@@ -211,7 +211,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: [], rating: 4.6, reviews: 445,
+    images: ['images/theone.webp'], rating: 4.6, reviews: 445,
   },
   {
     id: 'd7',
@@ -228,7 +228,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 523,
+    images: ['images/lightbluew.webp'], rating: 4.5, reviews: 523,
   },
   {
     id: 'd8',
@@ -245,7 +245,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: [], rating: 4.6, reviews: 678,
+    images: ['images/dylanblue.webp'], rating: 4.6, reviews: 678,
   },
   {
     id: 'd9',
@@ -262,7 +262,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: ['images/adgprofondo.webp'], rating: 4.7, reviews: 534, isNew: true,
+    images: ['images/adgprofondo.webp'], rating: 4.7, reviews: 534, isNew: false,
   },
 
   // ============ ÁRABES ============
@@ -281,7 +281,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/goldedition.webp'], rating: 4.7, reviews: 278, isNew: true,
+    images: ['images/goldedition.webp'], rating: 4.7, reviews: 278, isNew: false,
   },
   {
     id: 'a2',
@@ -298,7 +298,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/kingdom.webp'], rating: 4.5, reviews: 209, isNew: true,
+    images: ['images/kingdom.webp'], rating: 4.5, reviews: 209, isNew: false,
   },
   {
     id: 'a3',
@@ -315,7 +315,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/eclaire.webp'], rating: 4.6, reviews: 156, isNew: true,
+    images: ['images/eclaire.webp'], rating: 4.6, reviews: 156, isNew: false,
   },
   {
     id: 'a4',
@@ -350,7 +350,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/dalal.webp'], rating: 4.5, reviews: 178,
+    images: ['images/dalal.webp'], rating: 4.5, reviews: 178, isNew: true,
   },
   {
     id: 'a6',
@@ -403,7 +403,7 @@ export const products: Product[] = [
         { ml: 100, price: 150, inStock: true },
       ]},
     ],
-    images: ['images/kamrah.webp'], rating: 4.7, reviews: 412, isNew: true,
+    images: ['images/kamrah.webp'], rating: 4.7, reviews: 412, isNew: false,
   },
   {
     id: 'a9',
@@ -421,7 +421,7 @@ export const products: Product[] = [
         { ml: 100, price: 150, inStock: true },
       ]},
     ],
-    images: ['images/qahwa.webp'], rating: 4.8, reviews: 289, isNew: true,
+    images: ['images/qahwa.webp'], rating: 4.8, reviews: 289, isNew: false,
   },
   {
     id: 'a10',
@@ -438,7 +438,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/untold.webp'], rating: 4.6, reviews: 345, isNew: true,
+    images: ['images/untold.webp'], rating: 4.6, reviews: 345, isNew: false,
   },
   {
     id: 'a11',
@@ -455,7 +455,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/urbanman.webp'], rating: 4.5, reviews: 234,
+    images: ['images/urbanman.webp'], rating: 4.5, reviews: 234, isNew: true,
   },
   {
     id: 'a12',
@@ -472,10 +472,10 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/cdnwoman.webp'], rating: 4.4, reviews: 198,
+    images: ['images/cdnwoman.webp'], rating: 4.4, reviews: 198, isNew: true,
   },
   {
-    id: 'a15',
+    id: 'a13',
     name: 'Sceptre Malachite',
     brand: 'Maison Alhambra',
     description: 'Una fragancia lujosa con rosa, azafrán, ámbar y oud. Una mezcla sofisticada que evoca la elegancia del mármol malachite.',
@@ -489,7 +489,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/sceptre.webp'], rating: 4.5, reviews: 167, isNew: true,
+    images: ['images/sceptre.webp'], rating: 4.5, reviews: 167, isNew: false,
   },
   {
     id: 'a14',
@@ -506,7 +506,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/ice.webp'], rating: 4.6, reviews: 212, isNew: true,
+    images: ['images/ice.webp'], rating: 4.6, reviews: 212, isNew: false,
   },
   {
     id: 'a15',
@@ -523,7 +523,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 156,
+    images: ['images/fire.webp'], rating: 4.5, reviews: 156,
   },
   {
     id: 'a16',
@@ -540,7 +540,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.4, reviews: 154,
+    images: ['images/hmalibu.webp'], rating: 4.4, reviews: 154,
   },
   {
     id: 'a17',
@@ -557,10 +557,10 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 145,
+    images: ['images/hkobra.webp'], rating: 4.5, reviews: 145,
   },
   {
-    id: 'a20',
+    id: 'a18',
     name: 'Hawas Tropical',
     brand: 'Rasasi',
     description: 'Una fragancia exótica y afrutada con mango, maracuyá, flores tropicales y almizcle. Dulce, vibrante y perfecta para el verano.',
@@ -574,7 +574,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.4, reviews: 123,
+    images: ['images/htropical.webp'], rating: 4.4, reviews: 123,
   },
   {
     id: 'a19',
@@ -591,7 +591,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 167,
+    images: ['images/hforher.webp'], rating: 4.5, reviews: 167,
   },
   {
     id: 'a20',
@@ -609,7 +609,7 @@ export const products: Product[] = [
         { ml: 100, price: 180, inStock: true },
       ]},
     ],
-    images: [], rating: 4.6, reviews: 234, isNew: true,
+    images: ['images/skyelixir.webp'], rating: 4.6, reviews: 234, isNew: false,
   },
   {
     id: 'a21',
@@ -626,7 +626,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.4, reviews: 98,
+    images: ['images/bahamas.webp'], rating: 4.4, reviews: 98,
   },
   {
     id: 'a22',
@@ -643,7 +643,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.3, reviews: 87,
+    images: ['images/aqua.webp'], rating: 4.3, reviews: 87,
   },
   {
     id: 'a23',
@@ -660,7 +660,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 567,
+    images: ['images/9pm.webp'], rating: 4.5, reviews: 567,
   },
   {
     id: 'a24',
