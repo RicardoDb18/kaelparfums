@@ -64,7 +64,7 @@ export default function Checkout() {
     lines.push(`*Total: S/${total.toFixed(2)}*`)
 
     const msg = encodeURIComponent(lines.join('\n'))
-    window.open(`https://wa.me/51954462893?text=${msg}`, '_blank')
+    window.open(`https://wa.me/51918123682?text=${msg}`, '_blank')
 
     setSubmitted(true)
     setTimeout(() => {
