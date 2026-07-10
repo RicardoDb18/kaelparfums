@@ -252,7 +252,7 @@ export default function Checkout() {
                 {method === 'tienda' && (
                   <div className="bg-zinc-50 rounded-xl border border-black/5 p-4 text-sm text-black/50">
                     <p className="font-medium text-black mb-1">Dirección de tienda</p>
-                    <p>Av. Ejemplo 123, Miraflores, Lima</p>
+                    <p>Pueblo Libre, Lima</p>
                     <p className="mt-2 text-xs">Te contactaremos para coordinar el recojo.</p>
                   </div>
                 )}
