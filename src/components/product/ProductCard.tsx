@@ -20,9 +20,7 @@ const brandColors: Record<string, string> = {
   Afnan: 'bg-zinc-800',
   Rasasi: 'bg-zinc-800',
   'Al Haramain': 'bg-zinc-800',
-  'Ard Al Zaafaran': 'bg-zinc-800',
   'Maison Alhambra': 'bg-zinc-800',
-  'Paris Corner': 'bg-zinc-800',
   Zimaya: 'bg-zinc-800',
 }
 
@@ -47,9 +45,13 @@ export default function ProductCard({ product }: ProductCardProps) {
       className="group bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300"
     >
       <div className={`relative aspect-square ${brandColors[product.brand] || 'bg-zinc-800'} flex items-center justify-center overflow-hidden`}>
-        <div className="text-white/5 text-8xl font-display font-bold select-none">
-          {product.brand.charAt(0)}
-        </div>
+        {product.images[0] ? (
+          <img src={import.meta.env.BASE_URL + product.images[0]} alt={product.name} className="w-full h-full object-cover" />
+        ) : (
+          <div className="text-white/5 text-8xl font-display font-bold select-none">
+            {product.brand.charAt(0)}
+          </div>
+        )}
         <span className={`absolute top-3 left-3 text-[10px] font-semibold px-2.5 py-1 rounded-full border ${typeColors[product.categoryType]}`}>
           {typeLabels[product.categoryType]}
         </span>

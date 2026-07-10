@@ -15,10 +15,8 @@ export const brands: Brand[] = [
   { id: '12', name: 'Afnan', logo: '', description: 'Perfumería árabe contemporánea', slug: 'afnan' },
   { id: '13', name: 'Rasasi', logo: '', description: 'Perfumería árabe tradicional', slug: 'rasasi' },
   { id: '14', name: 'Al Haramain', logo: '', description: 'Perfumería árabe de lujo', slug: 'al-haramain' },
-  { id: '15', name: 'Ard Al Zaafaran', logo: '', description: 'Perfumería árabe de calidad', slug: 'ard-al-zaafaran' },
-  { id: '16', name: 'Maison Alhambra', logo: '', description: 'Perfumería árabe contemporánea', slug: 'maison-alhambra' },
-  { id: '17', name: 'Paris Corner', logo: '', description: 'Perfumería árabe moderna', slug: 'paris-corner' },
-  { id: '18', name: 'Zimaya', logo: '', description: 'Perfumería árabe contemporánea', slug: 'zimaya' },
+  { id: '15', name: 'Maison Alhambra', logo: '', description: 'Perfumería árabe contemporánea', slug: 'maison-alhambra' },
+  { id: '16', name: 'Zimaya', logo: '', description: 'Perfumería árabe contemporánea', slug: 'zimaya' },
 ]
 
 export const products: Product[] = [
@@ -38,7 +36,7 @@ export const products: Product[] = [
         { ml: 10, price: 99, inStock: true },
       ]},
     ],
-    images: [], rating: 4.8, reviews: 312, isNew: true,
+    images: ['images/erbapura.webp'], rating: 4.8, reviews: 312, isNew: true,
   },
   {
     id: '2',
@@ -55,7 +53,7 @@ export const products: Product[] = [
         { ml: 10, price: 99, inStock: true },
       ]},
     ],
-    images: [], rating: 4.7, reviews: 245, isNew: true,
+    images: ['images/tonka.webp'], rating: 4.7, reviews: 245, isNew: true,
   },
   {
     id: '3',
@@ -72,7 +70,7 @@ export const products: Product[] = [
         { ml: 10, price: 99, inStock: true },
       ]},
     ],
-    images: [], rating: 4.6, reviews: 178,
+    images: ['images/french.webp'], rating: 4.6, reviews: 178,
   },
   {
     id: '4',
@@ -89,7 +87,7 @@ export const products: Product[] = [
         { ml: 10, price: 99, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 198,
+    images: ['images/lemonmint.webp'], rating: 4.5, reviews: 198,
   },
   {
     id: '5',
@@ -106,7 +104,7 @@ export const products: Product[] = [
         { ml: 10, price: 99, inStock: true },
       ]},
     ],
-    images: [], rating: 4.7, reviews: 156, isNew: true,
+    images: ['images/torino21.webp'], rating: 4.7, reviews: 156, isNew: true,
   },
 
   // ============ DISEÑADOR ============
@@ -125,7 +123,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: [], rating: 4.7, reviews: 234, isNew: true,
+    images: ['images/valentinobirint.webp'], rating: 4.7, reviews: 234, isNew: true,
   },
   {
     id: 'd2',
@@ -261,7 +259,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: [], rating: 4.7, reviews: 534, isNew: true,
+    images: ['images/adgprofondo.webp'], rating: 4.7, reviews: 534, isNew: true,
   },
 
   // ============ ÁRABES ============
@@ -280,7 +278,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.7, reviews: 278, isNew: true,
+    images: ['images/goldedition.webp'], rating: 4.7, reviews: 278, isNew: true,
   },
   {
     id: 'a2',
@@ -297,7 +295,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 189, isNew: true,
+    images: ['images/kingdom.webp'], rating: 4.5, reviews: 189, isNew: true,
   },
   {
     id: 'a3',
@@ -310,11 +308,11 @@ export const products: Product[] = [
     concentrations: [
       { type: 'EDP', sizes: [
         { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 5, price: 18, inStock: true },  
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.6, reviews: 156, isNew: true,
+    images: ['images/eclaire.webp'], rating: 4.6, reviews: 156, isNew: true,
   },
   {
     id: 'a4',
@@ -331,7 +329,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.4, reviews: 134,
+    images: ['images/sublime.webp'], rating: 4.4, reviews: 134,
   },
   {
     id: 'a5',
@@ -348,7 +346,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.5, reviews: 178,
+    images: ['images/dalal.webp'], rating: 4.5, reviews: 178,
   },
   {
     id: 'a6',
@@ -365,12 +363,12 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.4, reviews: 112,
+    images: ['images/angham.webp'], rating: 4.4, reviews: 112,
   },
   {
     id: 'a7',
     name: 'Musamam Black Intense',
-    brand: 'Ard Al Zaafaran',
+    brand: 'Lattafa',
     description: 'Una fragancia intensa y especiada con azafrán, oud, ámbar y cuero. Oscura, poderosa y con una estela excepcional.',
     notes: ['Azafrán', 'Oud', 'Ámbar', 'Cuero', 'Almizcle', 'Cedro'],
     categoryType: 'arabes',
@@ -382,7 +380,7 @@ export const products: Product[] = [
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.6, reviews: 198, isNew: true,
+    images: ['images/musamam.webp'], rating: 4.6, reviews: 198, isNew: true,
   },
   {
     id: 'a8',
@@ -591,7 +589,7 @@ export const products: Product[] = [
   {
     id: 'a20',
     name: 'Mandarin Sky Elixir',
-    brand: 'Paris Corner',
+    brand: 'Armaf',
     description: 'Una fragancia cítrica y dulce con mandarina, caramelo, ámbar y vainilla. Radiante, alegre y con una estela impresionante.',
     notes: ['Mandarina', 'Caramelo', 'Ámbar', 'Vainilla', 'Almizcle', 'Cedro'],
     categoryType: 'arabes',
@@ -608,7 +606,7 @@ export const products: Product[] = [
   {
     id: 'a21',
     name: 'Odyssey Bahamas',
-    brand: 'Paris Corner',
+    brand: 'Armaf',
     description: 'Una fragancia fresca y acuática con bergamota, sal marina, coco y almizcle. Evocadora de playas paradisíacas y brisa marina.',
     notes: ['Bergamota', 'Sal marina', 'Coco', 'Almizcle', 'Ámbar', 'Cedro'],
     categoryType: 'arabes',
@@ -625,7 +623,7 @@ export const products: Product[] = [
   {
     id: 'a22',
     name: 'Odyssey Aqua',
-    brand: 'Paris Corner',
+    brand: 'Armaf',
     description: 'Una fragancia acuática y fresca con notas marinas, cítricos, lavanda y almizcle. Ligera, refrescante y perfecta para el verano.',
     notes: ['Notas marinas', 'Cítricos', 'Lavanda', 'Almizcle', 'Ámbar', 'Cedro'],
     categoryType: 'arabes',

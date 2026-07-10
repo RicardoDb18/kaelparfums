@@ -46,9 +46,13 @@ export default function ProductDetail() {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 mb-20">
           <div className="aspect-square rounded-2xl bg-black flex items-center justify-center">
-            <div className="text-white/5 text-[12rem] font-display font-bold select-none">
-              {product.brand.charAt(0)}
-            </div>
+            {product.images[0] ? (
+              <img src={import.meta.env.BASE_URL + product.images[0]} alt={product.name} className="w-full h-full object-cover rounded-2xl" />
+            ) : (
+              <div className="text-white/5 text-[12rem] font-display font-bold select-none">
+                {product.brand.charAt(0)}
+              </div>
+            )}
           </div>
 
           <div>

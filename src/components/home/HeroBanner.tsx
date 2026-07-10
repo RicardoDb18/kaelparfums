@@ -3,22 +3,29 @@ import { Link } from 'react-router-dom'
 
 const slides = [
   {
-    title: 'Perfumes de Nicho',
+    title: 'Decants Premium',
+    subtitle: 'Prueba antes de invertir. Decants de 3ml, 5ml y 10ml',
+    cta: 'Ver Decants',
+    link: '/decants',
+    accent: 'Muestras de Lujo',
+  },
+  {
+    title: 'Perfumes Nicho',
     subtitle: 'Descubre fragancias exclusivas de las mejores casas del mundo',
     cta: 'Explorar Colección',
     link: '/shop?type=nicho',
     accent: 'Colección Premium',
   },
   {
-    title: 'Decants Premium',
-    subtitle: 'Prueba antes de invertir. Decants de 2ml, 5ml y 10ml',
-    cta: 'Ver Decants',
-    link: '/decants',
-    accent: 'Muestras de Lujo',
+    title: 'Perfumes de Diseñador',
+    subtitle: 'Las fragancias más icónicas de las marcas más reconocidas',
+    cta: 'Explorar Diseñadores',
+    link: '/shop?type=diseñadores',
+    accent: 'Colección Diseñadores',
   },
   {
     title: 'Perfumes Árabes',
-    subtitle: 'Las fragancias más potentes y duraderas de Oriente',
+    subtitle: 'Las fragancias en tendencia de la perfumería árabe, con aromas intensos y duraderos',
     cta: 'Explorar Árabes',
     link: '/shop?type=arabes',
     accent: 'Colección Oriental',
@@ -40,9 +47,9 @@ export default function HeroBanner() {
           key={i}
           className={`absolute inset-0 transition-opacity duration-1000 ${i === current ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
         >
-          <div className="absolute inset-0 bg-cover bg-center opacity-10" style={{ backgroundImage: 'url(/images/logokael.jpg)' }} />
           <div className="absolute inset-0 bg-gradient-to-r from-black via-black/95 to-black/90" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,169,110,0.1),transparent_70%)]" />
+          <img src={`${import.meta.env.BASE_URL}images/logokael.jpg`} alt="" className="absolute inset-0 w-full h-full object-contain opacity-[0.12]" />
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(201,169,110,0.15),transparent_70%)]" />
 
           <div className="relative h-full max-w-7xl mx-auto px-6 lg:px-8 flex items-center">
             <div className="max-w-2xl">
