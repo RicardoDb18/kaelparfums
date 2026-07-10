@@ -59,6 +59,9 @@ export default function Shop() {
     }
 
     switch (sortBy) {
+      case 'default':
+        result.sort((a, b) => (a.isNew === b.isNew ? 0 : a.isNew ? -1 : 1))
+        break
       case 'price-asc':
         result.sort((a, b) => Math.min(...a.concentrations.flatMap(c => c.sizes.map(s => s.price))) - Math.min(...b.concentrations.flatMap(c => c.sizes.map(s => s.price))))
         break
@@ -105,7 +108,7 @@ export default function Shop() {
           </button>
 
           <aside className={`${showFilters ? 'block' : 'hidden'} lg:block lg:w-64 shrink-0`}>
-            <div className="lg:sticky lg:top-28 space-y-8">
+            <div className="lg:sticky lg:top-28 space-y-6">
               <div>
                 <input
                   type="text"

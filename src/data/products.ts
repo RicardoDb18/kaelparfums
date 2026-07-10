@@ -67,9 +67,9 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 25, inStock: true },
-        { ml: 5, price: 35, inStock: true },
-        { ml: 10, price: 65, inStock: true },
+        { ml: 3, price: 25, inStock: false },
+        { ml: 5, price: 35, inStock: false },
+        { ml: 10, price: 65, inStock: false },
         { ml: 120, price: 500, inStock: true },
       ]},
     ],
@@ -85,9 +85,9 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 33, inStock: true },
-        { ml: 5, price: 55, inStock: true },
-        { ml: 10, price: 99, inStock: true },
+        { ml: 3, price: 33, inStock: false },
+        { ml: 5, price: 55, inStock: false },
+        { ml: 10, price: 99, inStock: false },
       ]},
     ],
     images: ['images/lemonmint.webp'], rating: 4.5, reviews: 198,
@@ -102,9 +102,9 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 33, inStock: true },
-        { ml: 5, price: 55, inStock: true },
-        { ml: 10, price: 99, inStock: true },
+        { ml: 3, price: 33, inStock: false },
+        { ml: 5, price: 55, inStock: false },
+        { ml: 10, price: 99, inStock: false },
       ]},
     ],
     images: ['images/torino21.webp'], rating: 4.7, reviews: 156, isNew: true,
@@ -321,10 +321,10 @@ export const products: Product[] = [
     id: 'a4',
     name: 'Sublime',
     brand: 'Lattafa',
-    description: 'Una fragancia floral y afrutada con pera, jazmín, azahar y almizcle. Femenina, elegante y perfecta para cualquier ocasión.',
+    description: 'Bade\'e Al Oud Sublime de Lattafa Perfumes es una fragancia de la familia olfativa Amaderada Aromática para Hombres y Mujeres. Bade\'e Al Oud Sublime se lanzó en 2023. Las Notas de Salida son manzana, lichi y rosa; las Notas de Corazón son ciruela y jazmín; las Notas de Fondo son musgo, vainilla y pachulí.',
     notes: ['Pera', 'Jazmín', 'Azahar', 'Almizcle', 'Ámbar', 'Sándalo'],
     categoryType: 'arabes',
-    gender: 'femenino',
+    gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
         { ml: 3, price: 15, inStock: true },
@@ -333,7 +333,7 @@ export const products: Product[] = [
         { ml: 100, price: 150, inStock: true },
       ]},
     ],
-    images: ['images/sublime.webp'], rating: 4.4, reviews: 154,
+    images: ['images/sublime.webp'], rating: 4.6, reviews: 154,
   },
   {
     id: 'a5',
