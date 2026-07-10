@@ -13,7 +13,7 @@ export const brands: Brand[] = [
   { id: '10', name: 'Lattafa', logo: '', description: 'Perfumería árabe de alta calidad', slug: 'lattafa' },
   { id: '11', name: 'Armaf', logo: '', description: 'Perfumería árabe moderna', slug: 'armaf' },
   { id: '12', name: 'Afnan', logo: '', description: 'Perfumería árabe contemporánea', slug: 'afnan' },
-  { id: '13', name: 'Rasasi', logo: '', description: 'Perfumería árabe tradicional', slug: 'rasasi' },
+  { id: '15', name: 'Rasasi', logo: '', description: 'Perfumería árabe tradicional', slug: 'rasasi' },
   { id: '14', name: 'Al Haramain', logo: '', description: 'Perfumería árabe de lujo', slug: 'al-haramain' },
   { id: '15', name: 'Maison Alhambra', logo: '', description: 'Perfumería árabe contemporánea', slug: 'maison-alhambra' },
   { id: '16', name: 'Zimaya', logo: '', description: 'Perfumería árabe contemporánea', slug: 'zimaya' },
@@ -31,9 +31,10 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 33, inStock: true },
+        { ml: 3, price: 35, inStock: true },
         { ml: 5, price: 55, inStock: true },
         { ml: 10, price: 99, inStock: true },
+        { ml: 100, price: 750, inStock: true },
       ]},
     ],
     images: ['images/erbapura.webp'], rating: 4.8, reviews: 312, isNew: true,
@@ -48,9 +49,10 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 33, inStock: true },
-        { ml: 5, price: 55, inStock: true },
-        { ml: 10, price: 99, inStock: true },
+        { ml: 3, price: 25, inStock: true },
+        { ml: 5, price: 35, inStock: true },
+        { ml: 10, price: 65, inStock: true },
+        { ml: 100, price: 450, inStock: true },
       ]},
     ],
     images: ['images/tonka.webp'], rating: 4.7, reviews: 245, isNew: true,
@@ -65,9 +67,10 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 33, inStock: true },
-        { ml: 5, price: 55, inStock: true },
-        { ml: 10, price: 99, inStock: true },
+        { ml: 3, price: 25, inStock: true },
+        { ml: 5, price: 35, inStock: true },
+        { ml: 10, price: 65, inStock: true },
+        { ml: 120, price: 500, inStock: true },
       ]},
     ],
     images: ['images/french.webp'], rating: 4.6, reviews: 178,
@@ -140,7 +143,7 @@ export const products: Product[] = [
         { ml: 10, price: 69, inStock: true },
       ]},
     ],
-    images: ['images/coral.webp'], rating: 4.6, reviews: 189, isNew: true,
+    images: ['images/coral.webp'], rating: 4.6, reviews: 209, isNew: true,
   },
   {
     id: 'd3',
@@ -273,8 +276,8 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -290,12 +293,12 @@ export const products: Product[] = [
     gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/kingdom.webp'], rating: 4.5, reviews: 189, isNew: true,
+    images: ['images/kingdom.webp'], rating: 4.5, reviews: 209, isNew: true,
   },
   {
     id: 'a3',
@@ -307,8 +310,8 @@ export const products: Product[] = [
     gender: 'femenino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },  
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },  
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -324,12 +327,13 @@ export const products: Product[] = [
     gender: 'femenino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
+        { ml: 100, price: 150, inStock: true },
       ]},
     ],
-    images: ['images/sublime.webp'], rating: 4.4, reviews: 134,
+    images: ['images/sublime.webp'], rating: 4.4, reviews: 154,
   },
   {
     id: 'a5',
@@ -341,8 +345,8 @@ export const products: Product[] = [
     gender: 'femenino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -358,8 +362,8 @@ export const products: Product[] = [
     gender: 'femenino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -375,9 +379,10 @@ export const products: Product[] = [
     gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
+        { ml: 100, price: 200, inStock: true },
       ]},
     ],
     images: ['images/musamam.webp'], rating: 4.6, reviews: 198, isNew: true,
@@ -392,9 +397,10 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
+        { ml: 100, price: 150, inStock: true },
       ]},
     ],
     images: ['images/kamrah.webp'], rating: 4.7, reviews: 412, isNew: true,
@@ -409,9 +415,10 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
+        { ml: 100, price: 150, inStock: true },
       ]},
     ],
     images: ['images/qahwa.webp'], rating: 4.8, reviews: 289, isNew: true,
@@ -426,8 +433,8 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -443,8 +450,8 @@ export const products: Product[] = [
     gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -460,15 +467,15 @@ export const products: Product[] = [
     gender: 'femenino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
     images: ['images/cdnwoman.webp'], rating: 4.4, reviews: 198,
   },
   {
-    id: 'a13',
+    id: 'a15',
     name: 'Sceptre Malachite',
     brand: 'Maison Alhambra',
     description: 'Una fragancia lujosa con rosa, azafrán, ámbar y oud. Una mezcla sofisticada que evoca la elegancia del mármol malachite.',
@@ -477,8 +484,8 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -494,8 +501,8 @@ export const products: Product[] = [
     gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -511,8 +518,8 @@ export const products: Product[] = [
     gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -528,12 +535,12 @@ export const products: Product[] = [
     gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: [], rating: 4.4, reviews: 134,
+    images: [], rating: 4.4, reviews: 154,
   },
   {
     id: 'a17',
@@ -545,15 +552,15 @@ export const products: Product[] = [
     gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
     images: [], rating: 4.5, reviews: 145,
   },
   {
-    id: 'a18',
+    id: 'a20',
     name: 'Hawas Tropical',
     brand: 'Rasasi',
     description: 'Una fragancia exótica y afrutada con mango, maracuyá, flores tropicales y almizcle. Dulce, vibrante y perfecta para el verano.',
@@ -562,8 +569,8 @@ export const products: Product[] = [
     gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -579,8 +586,8 @@ export const products: Product[] = [
     gender: 'femenino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -596,9 +603,10 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
+        { ml: 100, price: 180, inStock: true },
       ]},
     ],
     images: [], rating: 4.6, reviews: 234, isNew: true,
@@ -613,8 +621,8 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -630,8 +638,8 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -647,8 +655,8 @@ export const products: Product[] = [
     gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
@@ -664,12 +672,12 @@ export const products: Product[] = [
     gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],
-    images: ['images/nitro.webp'], rating: 4.5, reviews: 189, isNew: true,
+    images: ['images/nitro.webp'], rating: 4.5, reviews: 209, isNew: true,
   },
   {
     id: 'a25',
@@ -681,8 +689,8 @@ export const products: Product[] = [
     gender: 'unisex',
     concentrations: [
       { type: 'EDP', sizes: [
-        { ml: 3, price: 13, inStock: true },
-        { ml: 5, price: 18, inStock: true },
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
         { ml: 10, price: 30, inStock: true },
       ]},
     ],

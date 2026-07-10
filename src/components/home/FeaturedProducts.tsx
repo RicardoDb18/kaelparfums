@@ -12,7 +12,7 @@ export default function FeaturedProducts() {
           <div>
             <span className="text-gold text-sm font-medium uppercase tracking-[0.25em]">Destacados</span>
             <h2 className="text-3xl sm:text-4xl font-display font-bold text-black mt-3">
-              Nuevos Lanzamientos
+              Novedades
             </h2>
           </div>
           <Link
