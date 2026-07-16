@@ -112,6 +112,7 @@ export default function Cart() {
                 </Link>
                 <p className="text-xs text-black/40 mt-0.5">
                   {item.product.brand} · {item.concentrationType} · {item.ml}ml · {typeLabels[item.product.categoryType]}
+                  {item.onDemand && <span className="text-amber-600 font-medium ml-1">· A pedido</span>}
                 </p>
                 <p className="text-sm font-medium text-gold mt-1">S/{item.price.toFixed(2)}</p>
               </div>

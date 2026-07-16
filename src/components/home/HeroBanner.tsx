@@ -5,7 +5,7 @@ const slides = [
   {
     title: 'CYBER WOW',
     subtitle: 'Hasta 20% dcto',
-    subsubtitle: 'Agrega el cupón CYBERWOW a tu compra',
+    subsubtitle: 'Agregando el cupón CYBERWOW',
     cta: 'Ver Promociones',
     link: '/promociones',
     accent: '🎉 Oferta Especial',

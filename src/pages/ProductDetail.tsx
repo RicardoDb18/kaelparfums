@@ -126,29 +126,42 @@ export default function ProductDetail() {
                     <button
                       key={s.ml}
                       onClick={() => setSelectedSize(i)}
-                      disabled={!s.inStock}
                       className={`px-4 py-3 rounded-lg text-sm font-medium border transition-colors ${
                         !s.inStock
-                          ? 'border-black/5 text-black/20 cursor-not-allowed bg-zinc-50'
+                          ? selectedSize === i
+                            ? 'border-amber-300 bg-amber-50 text-amber-800'
+                            : 'border-amber-200 bg-amber-50/50 text-amber-700 hover:border-amber-300'
                           : selectedSize === i
                             ? 'border-gold bg-gold/5 text-gold-dark'
                             : 'border-black/10 text-black/60 hover:border-black/20'
                       }`}
                     >
                       <span className="block font-semibold">{s.ml}ml</span>
-                      <span className="block text-xs mt-0.5">
-                        {s.originalPrice && (
-                          <span className="line-through text-black/30 mr-1">S/{s.originalPrice}</span>
-                        )}
-                        <span className={selectedSize === i ? 'text-gold-dark' : 'text-black/40'}>S/{s.price}</span>
-                      </span>
+                      {!s.inStock ? (
+                        <>
+                          <span className="block text-xs mt-0.5 text-amber-600">A pedido</span>
+                          {product.categoryType !== 'nicho' && (
+                            <span className="block text-[10px] mt-0.5 text-amber-500 font-semibold">-10% S/{(s.price * 0.9).toFixed(2)}</span>
+                          )}
+                          {product.categoryType === 'nicho' && (
+                            <span className="block text-xs mt-0.5 text-amber-600">S/{s.price}</span>
+                          )}
+                        </>
+                      ) : (
+                        <span className="block text-xs mt-0.5">
+                          {s.originalPrice && (
+                            <span className="line-through text-black/30 mr-1">S/{s.originalPrice}</span>
+                          )}
+                          <span className={selectedSize === i ? 'text-gold-dark' : 'text-black/40'}>S/{s.price}</span>
+                        </span>
+                      )}
                     </button>
                   ))}
                 </div>
               </div>
             )}
 
-            {size && size.inStock && (
+            {size && (size.inStock ? (
               <>
                 <div className="flex items-center gap-4 mb-2">
                   <div className="flex items-center border border-black/10 rounded-lg">
@@ -186,7 +199,62 @@ export default function ProductDetail() {
                   </Link>
                 )}
               </>
-            )}
+            ) : (
+              <>
+                <div className="mb-2">
+                  <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 mb-3">
+                    <p className="text-sm font-medium text-amber-800">📦 Producto disponible por pedido</p>
+                    {product.categoryType !== 'nicho' && (
+                      <p className="text-xs text-amber-600 mt-1">Se procesa al recibir tu compra. 10% de descuento aplicado.</p>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-4">
+                    <div className="flex items-center border border-black/10 rounded-lg">
+                      <button
+                        onClick={() => setQuantity(Math.max(1, quantity - 1))}
+                        className="px-3 py-2 text-black/50 hover:text-black transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 12H4" />
+                        </svg>
+                      </button>
+                      <span className="px-4 py-2 font-medium text-black min-w-[3rem] text-center">{quantity}</span>
+                      <button
+                        onClick={() => setQuantity(quantity + 1)}
+                        className="px-3 py-2 text-black/50 hover:text-black transition-colors"
+                      >
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
+                        </svg>
+                      </button>
+                    </div>
+                    {product.categoryType !== 'nicho' ? (
+                      <button
+                        onClick={() => addToCart(product, concentration.type, size.ml, Math.round(size.price * 0.9), quantity, true)}
+                        className="flex-1 px-8 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors"
+                      >
+                        Pedir — S/{(size.price * 0.9 * quantity).toFixed(2)}
+                      </button>
+                    ) : (
+                      <button
+                        onClick={() => addToCart(product, concentration.type, size.ml, size.price, quantity, true)}
+                        className="flex-1 px-8 py-3 bg-amber-500 text-white font-semibold rounded-lg hover:bg-amber-600 transition-colors"
+                      >
+                        Pedir — S/{(size.price * quantity).toFixed(2)}
+                      </button>
+                    )}
+                  </div>
+                </div>
+                {size.ml <= 10 && (
+                  <Link
+                    to="/promociones"
+                    className="block text-xs text-center text-gold font-medium mb-8 hover:underline"
+                  >
+                    🎉 Descuentos por volumen: 10% OFF en 3+ decants · 15% OFF en 5+ decants
+                  </Link>
+                )}
+              </>
+            ))}
 
             <div className="border-t border-black/5 pt-6 space-y-3">
               <div className="flex items-center gap-2 text-sm text-black/50">

@@ -56,7 +56,7 @@ export default function Checkout() {
 
     lines.push('', '🧾 *Productos*')
     items.forEach(item => {
-      lines.push(`• ${item.product.name} (${item.concentrationType} ${item.ml}ml) x${item.quantity} — S/${(item.price * item.quantity).toFixed(2)}`)
+      lines.push(`• ${item.product.name} (${item.concentrationType} ${item.ml}ml${item.onDemand ? ', A pedido' : ''}) x${item.quantity} — S/${(item.price * item.quantity).toFixed(2)}`)
     })
 
     lines.push('', '💰 *Resumen*', `Subtotal: S/${subtotal.toFixed(2)}`)
@@ -276,6 +276,7 @@ export default function Checkout() {
                   <div key={i} className="flex justify-between text-sm">
                     <span className="text-black/50 truncate max-w-[180px]">
                       {item.product.name} ({item.ml}ml) x{item.quantity}
+                      {item.onDemand && <span className="text-amber-600"> (A pedido)</span>}
                     </span>
                     <span className="text-black font-medium">S/{(item.price * item.quantity).toFixed(2)}</span>
                   </div>

@@ -7,11 +7,12 @@ export interface CartItem {
   ml: number
   price: number
   quantity: number
+  onDemand?: boolean
 }
 
 interface CartContextType {
   items: CartItem[]
-  addToCart: (product: Product, concentrationType: string, ml: number, price: number, quantity: number) => void
+  addToCart: (product: Product, concentrationType: string, ml: number, price: number, quantity: number, onDemand?: boolean) => void
   removeFromCart: (index: number) => void
   updateQuantity: (index: number, quantity: number) => void
   clearCart: () => void
@@ -43,7 +44,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const dismissToast = useCallback(() => setShowToast(false), [])
 
-  const addToCart = useCallback((product: Product, concentrationType: string, ml: number, price: number, quantity: number) => {
+  const addToCart = useCallback((product: Product, concentrationType: string, ml: number, price: number, quantity: number, onDemand?: boolean) => {
     setItems(prev => {
       const existingIndex = prev.findIndex(
         i => i.product.id === product.id && i.concentrationType === concentrationType && i.ml === ml
@@ -53,7 +54,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
         next[existingIndex] = { ...next[existingIndex], quantity: next[existingIndex].quantity + quantity }
         return next
       }
-      return [...prev, { product, concentrationType, ml, price, quantity }]
+      return [...prev, { product, concentrationType, ml, price, quantity, onDemand }]
     })
     setToastMessage(`${product.name} ${ml}ml x${quantity} agregado al carrito`)
     setShowToast(true)
@@ -94,19 +95,29 @@ export function CartProvider({ children }: { children: ReactNode }) {
 
   const { totalItems, decantCount, subtotal, discount, couponDiscount } = useMemo(() => {
     const totalItems = items.reduce((s, i) => s + i.quantity, 0)
-    const decantCount = items.reduce((s, i) => s + (i.ml <= 10 ? i.quantity : 0), 0)
+
+    const discountableItems = items.filter(i => !i.onDemand && i.product.categoryType !== 'nicho')
+    const decantCount = discountableItems.reduce((s, i) => s + (i.ml <= 10 ? i.quantity : 0), 0)
+    const decantSubtotal = discountableItems.reduce((s, i) => s + (i.ml <= 10 ? i.price * i.quantity : 0), 0)
+    const perfumeSubtotal = discountableItems.reduce((s, i) => s + (i.ml > 10 ? i.price * i.quantity : 0), 0)
     const subtotal = items.reduce((s, i) => s + i.price * i.quantity, 0)
 
-    let discount = 0
-    if (decantCount >= 5) discount = subtotal * 0.15
-    else if (decantCount >= 3) discount = subtotal * 0.10
+    const discountRate = decantCount >= 5 ? 0.15 : decantCount >= 3 ? 0.10 : 0
+    let discount = decantSubtotal * discountRate
 
     let couponDiscount = 0
     if (couponApplied) {
-      couponDiscount = items.reduce((s, i) => {
+      const decantCoupon = discountableItems.reduce((s, i) => {
+        if (i.ml > 10) return s
         const lineTotal = i.price * i.quantity
-        return s + (i.ml <= 10 ? lineTotal * 0.10 : lineTotal * 0.20)
+        return s + lineTotal * (1 - discountRate) * 0.10
       }, 0)
+      const perfumeCoupon = discountableItems.reduce((s, i) => {
+        if (i.ml <= 10) return s
+        const lineTotal = i.price * i.quantity
+        return s + lineTotal * 0.20
+      }, 0)
+      couponDiscount = decantCoupon + perfumeCoupon
     }
 
     return { totalItems, decantCount, subtotal, discount, couponDiscount }
