@@ -19,6 +19,11 @@ interface CartContextType {
   decantCount: number
   subtotal: number
   discount: number
+  couponCode: string
+  couponApplied: boolean
+  couponDiscount: number
+  applyCoupon: (code: string) => boolean
+  removeCoupon: () => void
   total: number
   showToast: boolean
   toastMessage: string
@@ -27,10 +32,14 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | null>(null)
 
+const VALID_COUPON = 'CYBERWOW'
+
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState('')
+  const [couponCode, setCouponCode] = useState('')
+  const [couponApplied, setCouponApplied] = useState(false)
 
   const dismissToast = useCallback(() => setShowToast(false), [])
 
@@ -63,9 +72,27 @@ export function CartProvider({ children }: { children: ReactNode }) {
     })
   }, [])
 
-  const clearCart = useCallback(() => setItems([]), [])
+  const clearCart = useCallback(() => {
+    setItems([])
+    setCouponCode('')
+    setCouponApplied(false)
+  }, [])
 
-  const { totalItems, decantCount, subtotal, discount } = useMemo(() => {
+  const applyCoupon = useCallback((code: string) => {
+    if (code.trim().toUpperCase() === VALID_COUPON) {
+      setCouponCode(VALID_COUPON)
+      setCouponApplied(true)
+      return true
+    }
+    return false
+  }, [])
+
+  const removeCoupon = useCallback(() => {
+    setCouponCode('')
+    setCouponApplied(false)
+  }, [])
+
+  const { totalItems, decantCount, subtotal, discount, couponDiscount } = useMemo(() => {
     const totalItems = items.reduce((s, i) => s + i.quantity, 0)
     const decantCount = items.reduce((s, i) => s + (i.ml <= 10 ? i.quantity : 0), 0)
     const subtotal = items.reduce((s, i) => s + i.price * i.quantity, 0)
@@ -74,15 +101,25 @@ export function CartProvider({ children }: { children: ReactNode }) {
     if (decantCount >= 5) discount = subtotal * 0.15
     else if (decantCount >= 3) discount = subtotal * 0.10
 
-    return { totalItems, decantCount, subtotal, discount }
-  }, [items])
+    let couponDiscount = 0
+    if (couponApplied) {
+      couponDiscount = items.reduce((s, i) => {
+        const lineTotal = i.price * i.quantity
+        return s + (i.ml <= 10 ? lineTotal * 0.10 : lineTotal * 0.20)
+      }, 0)
+    }
 
-  const total = subtotal - discount
+    return { totalItems, decantCount, subtotal, discount, couponDiscount }
+  }, [items, couponApplied])
+
+  const total = subtotal - discount - couponDiscount
 
   return (
     <CartContext.Provider value={{
       items, addToCart, removeFromCart, updateQuantity, clearCart,
-      totalItems, decantCount, subtotal, discount, total,
+      totalItems, decantCount, subtotal, discount,
+      couponCode, couponApplied, couponDiscount, applyCoupon, removeCoupon,
+      total,
       showToast, toastMessage, dismissToast,
     }}>
       {children}

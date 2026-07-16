@@ -15,6 +15,25 @@ export default function Promociones() {
         </div>
 
         <div className="max-w-4xl mx-auto">
+          <div className="bg-gradient-to-r from-gold/10 to-transparent border border-gold/20 rounded-2xl p-8 mb-8 text-center">
+            <h2 className="text-2xl font-display font-bold text-black mb-3">🔥 CYBER WOW — Cupón CYBERWOW</h2>
+            <p className="text-black/50 mb-4 max-w-lg mx-auto">
+              Agrega el cupón <strong className="text-gold">CYBERWOW</strong> en tu carrito y obtén descuentos adicionales acumulables con promociones vigentes.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
+              <div className="bg-white rounded-xl p-4 border border-gold/10">
+                <p className="text-xs text-black/40 uppercase tracking-wider mb-1">Decants</p>
+                <p className="text-3xl font-display font-bold text-gold">10%</p>
+                <p className="text-xs text-black/50 mt-1">OFF</p>
+              </div>
+              <div className="bg-white rounded-xl p-4 border border-gold/10">
+                <p className="text-xs text-black/40 uppercase tracking-wider mb-1">Perfumes</p>
+                <p className="text-3xl font-display font-bold text-gold">20%</p>
+                <p className="text-xs text-black/50 mt-1">OFF</p>
+              </div>
+            </div>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
             <div className="bg-gradient-to-br from-gold/10 to-gold/5 rounded-2xl p-8 border border-gold/20 text-center">
               <div className="w-16 h-16 rounded-full bg-gold/20 flex items-center justify-center mx-auto mb-5">
