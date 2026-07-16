@@ -99,7 +99,6 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const discountableItems = items.filter(i => !i.onDemand && i.product.categoryType !== 'nicho')
     const decantCount = discountableItems.reduce((s, i) => s + (i.ml <= 10 ? i.quantity : 0), 0)
     const decantSubtotal = discountableItems.reduce((s, i) => s + (i.ml <= 10 ? i.price * i.quantity : 0), 0)
-    const perfumeSubtotal = discountableItems.reduce((s, i) => s + (i.ml > 10 ? i.price * i.quantity : 0), 0)
     const subtotal = items.reduce((s, i) => s + i.price * i.quantity, 0)
 
     const discountRate = decantCount >= 5 ? 0.15 : decantCount >= 3 ? 0.10 : 0
