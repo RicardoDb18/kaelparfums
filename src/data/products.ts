@@ -619,7 +619,7 @@ export const products: Product[] = [
     description: 'Una fragancia cítrica y dulce con mandarina, caramelo, ámbar y vainilla. Inspirado en Scandal Pour Homme Absolu de Jean Paul Gaultier.',
     notes: ['Mandarina', 'Caramelo', 'Ámbar', 'Vainilla', 'Almizcle', 'Cedro'],
     categoryType: 'arabes',
-    gender: 'unisex',
+    gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
         { ml: 3, price: 15, inStock: true },
@@ -709,7 +709,7 @@ export const products: Product[] = [
     description: 'Una fragancia envolvente y misteriosa con azafrán, rosa, oud y almizcle. Inspirado en Acqua di Giò Elixir de Giorgio Armani.',
     notes: ['Azafrán', 'Rosa', 'Oud', 'Almizcle', 'Ámbar', 'Cedro'],
     categoryType: 'arabes',
-    gender: 'unisex',
+    gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
         { ml: 3, price: 15, inStock: true },
@@ -763,7 +763,7 @@ export const products: Product[] = [
     description: 'Una fragancia especiada y amaderada con bergamota, jengibre, salvia, frambuesa y nuez moscada. Corazón de té rooibos y gamuza, con base de cedro, cashmeran y ámbar. Inspirado en Red Tea Vetiver de Clive Christian.',
     notes: ['Bergamota', 'Jengibre', 'Salvia', 'Frambuesa', 'Nuez moscada', 'Té rooibos', 'Gamuza', 'Cedro', 'Cashmeran', 'Ámbar'],
     categoryType: 'arabes',
-    gender: 'unisex',
+    gender: 'masculino',
     concentrations: [
       { type: 'EDP', sizes: [
         { ml: 3, price: 15, inStock: true },

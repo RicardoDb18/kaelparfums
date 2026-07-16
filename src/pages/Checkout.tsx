@@ -60,7 +60,7 @@ export default function Checkout() {
     })
 
     lines.push('', '💰 *Resumen*', `Subtotal: S/${subtotal.toFixed(2)}`)
-    if (discount > 0) lines.push(`Descuento (${decantCount >= 5 ? '15%' : '10%'}): -S/${discount.toFixed(2)}`)
+    if (discount > 0) lines.push(`Descuento (${decantCount >= 6 ? '15%' : '10%'}): -S/${discount.toFixed(2)}`)
     if (couponApplied && couponDiscount > 0) lines.push(`Cupón CYBERWOW: -S/${couponDiscount.toFixed(2)}`)
     lines.push(`*Total: S/${total.toFixed(2)}*`)
 
@@ -289,7 +289,7 @@ export default function Checkout() {
                 </div>
                 {discount > 0 && (
                   <div className="flex justify-between text-sm">
-                    <span className="text-gold">Descuento ({decantCount >= 5 ? '15%' : '10%'})</span>
+                    <span className="text-gold">Descuento ({decantCount >= 6 ? '15%' : '10%'})</span>
                     <span className="text-gold">-S/{discount.toFixed(2)}</span>
                   </div>
                 )}

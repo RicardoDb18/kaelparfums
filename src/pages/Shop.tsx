@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { products, brands } from '../data/products'
 import type { CategoryType } from '../types'
@@ -30,6 +30,12 @@ export default function Shop() {
   const [activeGender, setActiveGender] = useState<string>(genderParam || 'todas')
   const [activeBrand, setActiveBrand] = useState(brandParam || '')
   const [sortBy, setSortBy] = useState('default')
+
+  useEffect(() => {
+    setActiveType(typeParam || 'todas')
+    setActiveGender(genderParam || 'todas')
+    setActiveBrand(brandParam || '')
+  }, [searchParams])
 
   const filtered = useMemo(() => {
     let result = [...products]

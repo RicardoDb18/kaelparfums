@@ -57,7 +57,7 @@ export default function Decants() {
           className="block mb-10 bg-gradient-to-r from-gold/10 via-gold/5 to-transparent border border-gold/20 rounded-xl p-4 text-center hover:from-gold/20 transition-colors"
         >
           <span className="text-sm font-medium text-gold">
-            🎉 Descuentos por volumen: 10% OFF en 3+ decants · 15% OFF en 5+ decants — Ver promociones
+            🎉 Descuentos por volumen: 10% OFF en 3+ decants · 15% OFF en 6+ decants — Ver promociones
           </span>
         </Link>
 

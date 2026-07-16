@@ -1,13 +1,24 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
 
 export default function Navbar() {
   const { pathname } = useLocation()
+  const navigate = useNavigate()
   const { totalItems } = useCart()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const isHome = pathname === '/'
+
+  const scrollToCotiza = () => {
+    setMenuOpen(false)
+    if (isHome) {
+      document.getElementById('cotiza')?.scrollIntoView({ behavior: 'smooth' })
+    } else {
+      navigate('/')
+      setTimeout(() => document.getElementById('cotiza')?.scrollIntoView({ behavior: 'smooth' }), 100)
+    }
+  }
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -28,7 +39,7 @@ export default function Navbar() {
             <Link to="/shop?type=arabes" className="text-sm font-medium text-gold hover:text-gold-light transition-colors">Árabes</Link>
             <Link to="/shop?type=disenador" className="text-sm font-medium text-gold hover:text-gold-light transition-colors">Diseñador</Link>
             <Link to="/shop?type=nicho" className="text-sm font-medium text-gold hover:text-gold-light transition-colors">Nicho</Link>
-            <Link to="/decants" className="text-sm font-medium text-gold hover:text-gold-light transition-colors">Decants</Link>
+            <button onClick={scrollToCotiza} className="text-sm font-medium text-gold hover:text-gold-light transition-colors">Cotiza</button>
             <Link to="/promociones" className="text-sm font-medium text-gold hover:text-gold-light transition-colors">Promociones</Link>
             <Link to="/brands" className="text-sm font-medium text-gold hover:text-gold-light transition-colors">Marcas</Link>
           </nav>
@@ -59,7 +70,7 @@ export default function Navbar() {
             <Link to="/shop?type=arabes" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Árabes</Link>
             <Link to="/shop?type=disenador" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Diseñador</Link>
             <Link to="/shop?type=nicho" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Nicho</Link>
-            <Link to="/decants" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Decants</Link>
+            <button onClick={scrollToCotiza} className="block text-sm font-medium text-black/70 hover:text-gold">Cotiza</button>
             <Link to="/promociones" className="block text-sm font-medium text-gold hover:text-gold-light" onClick={() => setMenuOpen(false)}>Promociones</Link>
             <Link to="/brands" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Marcas</Link>
           </div>

@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import HeroBanner from '../components/home/HeroBanner'
 import FeaturedProducts from '../components/home/FeaturedProducts'
 import BrandSlider from '../components/home/BrandSlider'
@@ -11,12 +12,20 @@ const categories = [
 ]
 
 export default function Home() {
+  const [perfumeQuery, setPerfumeQuery] = useState('')
+
+  const handleQuote = () => {
+    if (!perfumeQuery.trim()) return
+    const msg = encodeURIComponent(`¡Hola! Quiero cotizar el perfume: ${perfumeQuery.trim()}`)
+    window.open(`https://wa.me/51918123682?text=${msg}`, '_blank')
+  }
+
   return (
     <main>
       <HeroBanner />
       <FeaturedProducts />
 
-      <section className="py-24">
+      <section className="py-12">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="text-gold text-sm font-medium uppercase tracking-[0.25em]">Categorías</span>
@@ -38,6 +47,34 @@ export default function Home() {
                 <p className="text-white/50 text-sm">{cat.count} fragancias</p>
               </a>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="cotiza" className="py-12 bg-zinc-50">
+        <div className="max-w-2xl mx-auto px-6 lg:px-8 text-center">
+          <span className="text-gold text-sm font-medium uppercase tracking-[0.25em]">¿No encuentras lo que buscas?</span>
+          <h2 className="text-3xl sm:text-4xl font-display font-bold text-black mt-3 mb-4">
+            Cotiza tu perfume ideal aquí
+          </h2>
+          <p className="text-black/50 mb-8">
+            Escríbenos el nombre del perfume que deseas y te daremos un precio especial.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 max-w-lg mx-auto">
+            <input
+              type="text"
+              value={perfumeQuery}
+              onChange={e => setPerfumeQuery(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') handleQuote() }}
+              placeholder="Ej: Creed Aventus, Tom Ford Tobacco Vanille..."
+              className="flex-1 px-5 py-3.5 border border-black/10 rounded-xl text-sm focus:outline-none focus:border-gold transition-colors"
+            />
+            <button
+              onClick={handleQuote}
+              className="px-8 py-3.5 bg-gold text-black font-semibold rounded-xl hover:bg-gold-light transition-colors shrink-0"
+            >
+              Cotizar
+            </button>
           </div>
         </div>
       </section>

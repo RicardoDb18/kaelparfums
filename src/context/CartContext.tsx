@@ -101,7 +101,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const decantSubtotal = discountableItems.reduce((s, i) => s + (i.ml <= 10 ? i.price * i.quantity : 0), 0)
     const subtotal = items.reduce((s, i) => s + i.price * i.quantity, 0)
 
-    const discountRate = decantCount >= 5 ? 0.15 : decantCount >= 3 ? 0.10 : 0
+    const discountRate = decantCount >= 6 ? 0.15 : decantCount >= 3 ? 0.10 : 0
     let discount = decantSubtotal * discountRate
 
     let couponDiscount = 0

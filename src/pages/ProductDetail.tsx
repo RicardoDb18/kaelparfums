@@ -195,7 +195,7 @@ export default function ProductDetail() {
                     to="/promociones"
                     className="block text-xs text-center text-gold font-medium mb-8 hover:underline"
                   >
-                    🎉 Descuentos por volumen: 10% OFF en 3+ decants · 15% OFF en 5+ decants
+                    🎉 Descuentos por volumen: 10% OFF en 3+ decants · 15% OFF en 6+ decants
                   </Link>
                 )}
               </>
@@ -250,7 +250,7 @@ export default function ProductDetail() {
                     to="/promociones"
                     className="block text-xs text-center text-gold font-medium mb-8 hover:underline"
                   >
-                    🎉 Descuentos por volumen: 10% OFF en 3+ decants · 15% OFF en 5+ decants
+                    🎉 Descuentos por volumen: 10% OFF en 3+ decants · 15% OFF en 6+ decants
                   </Link>
                 )}
               </>

@@ -53,7 +53,7 @@ export default function Cart() {
         {discount > 0 && (
           <div className="mb-4 bg-gradient-to-r from-gold/10 to-transparent border border-gold/20 rounded-xl p-4">
             <p className="text-sm font-medium text-gold">
-              🎉 Descuento por volumen aplicado: {decantCount >= 5 ? '15% OFF' : '10% OFF'} ({decantCount} decants)
+              🎉 Descuento por volumen aplicado: {decantCount >= 6 ? '15% OFF' : '10% OFF'} ({decantCount} decants)
             </p>
           </div>
         )}

@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom'
 
 export default function Newsletter() {
   return (
-    <section className="relative py-24 overflow-hidden">
+    <section className="relative py-12 overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-r from-black via-black to-black/95" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(201,169,110,0.08),transparent_60%)]" />
 

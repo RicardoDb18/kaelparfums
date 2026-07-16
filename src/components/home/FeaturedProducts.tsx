@@ -6,7 +6,7 @@ export default function FeaturedProducts() {
   const featured = products.filter(p => p.isNew).slice(0, 4)
 
   return (
-    <section className="py-24">
+    <section className="py-12">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="flex justify-between items-end mb-12">
           <div>
