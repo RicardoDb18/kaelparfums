@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext'
 type ShippingMethod = 'shalom' | 'delivery' | 'tienda' | null
 
 export default function Checkout() {
-  const { items, total, discount, decantCount, subtotal, couponApplied, couponDiscount, clearCart } = useCart()
+  const { items, total, discount, decantCount, subtotal, clearCart } = useCart()
   const navigate = useNavigate()
   const [method, setMethod] = useState<ShippingMethod>(null)
   const [form, setForm] = useState({
@@ -61,7 +61,6 @@ export default function Checkout() {
 
     lines.push('', '💰 *Resumen*', `Subtotal: S/${subtotal.toFixed(2)}`)
     if (discount > 0) lines.push(`Descuento (${decantCount >= 6 ? '15%' : '10%'}): -S/${discount.toFixed(2)}`)
-    if (couponApplied && couponDiscount > 0) lines.push(`Cupón CYBERWOW: -S/${couponDiscount.toFixed(2)}`)
     lines.push(`*Total: S/${total.toFixed(2)}*`)
 
     const msg = encodeURIComponent(lines.join('\n'))
@@ -291,12 +290,6 @@ export default function Checkout() {
                   <div className="flex justify-between text-sm">
                     <span className="text-gold">Descuento ({decantCount >= 6 ? '15%' : '10%'})</span>
                     <span className="text-gold">-S/{discount.toFixed(2)}</span>
-                  </div>
-                )}
-                {couponApplied && couponDiscount > 0 && (
-                  <div className="flex justify-between text-sm">
-                    <span className="text-gold">Cupón CYBERWOW</span>
-                    <span className="text-gold">-S/{couponDiscount.toFixed(2)}</span>
                   </div>
                 )}
                 <div className="flex justify-between pt-2 border-t border-black/10">

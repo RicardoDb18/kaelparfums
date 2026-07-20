@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 
@@ -8,9 +7,7 @@ const typeLabels: Record<string, string> = {
 
 export default function Cart() {
   const navigate = useNavigate()
-  const { items, totalItems, decantCount, subtotal, discount, couponApplied, couponDiscount, total, removeFromCart, updateQuantity, clearCart, applyCoupon, removeCoupon } = useCart()
-  const [couponInput, setCouponInput] = useState('')
-  const [couponError, setCouponError] = useState('')
+  const { items, totalItems, decantCount, subtotal, discount, total, removeFromCart, updateQuantity, clearCart } = useCart()
 
   if (items.length === 0) {
     return (
@@ -58,47 +55,7 @@ export default function Cart() {
           </div>
         )}
 
-        {!couponApplied ? (
-          <div className="mb-6 flex gap-2">
-            <input
-              type="text"
-              value={couponInput}
-              onChange={e => { setCouponInput(e.target.value); setCouponError('') }}
-              onKeyDown={e => {
-                if (e.key === 'Enter') {
-                  const ok = applyCoupon(couponInput)
-                  if (!ok) setCouponError('Cupón inválido')
-                  else setCouponInput('')
-                }
-              }}
-              placeholder="Cupón de descuento"
-              className="flex-1 px-4 py-2.5 border border-black/10 rounded-lg text-sm focus:outline-none focus:border-gold transition-colors"
-            />
-            <button
-              onClick={() => {
-                const ok = applyCoupon(couponInput)
-                if (!ok) setCouponError('Cupón inválido')
-                else setCouponInput('')
-              }}
-              className="px-5 py-2.5 bg-gold text-black font-semibold rounded-lg hover:bg-gold-light transition-colors text-sm"
-            >
-              Aplicar
-            </button>
-          </div>
-        ) : (
-          <div className="mb-6 bg-gradient-to-r from-gold/10 to-transparent border border-gold/20 rounded-xl p-4 flex items-center justify-between">
-            <div>
-              <p className="text-sm font-medium text-gold">🎉 Cupón CYBERWOW aplicado</p>
-              <p className="text-xs text-gold/60 mt-0.5">10% OFF en decants · 20% OFF en perfumes</p>
-            </div>
-            <button onClick={removeCoupon} className="text-xs text-black/40 hover:text-black transition-colors underline">
-              Quitar
-            </button>
-          </div>
-        )}
-        {couponError && (
-          <p className="text-xs text-red-500 mb-4 -mt-4">{couponError}</p>
-        )}
+
 
         <div className="space-y-4 mb-10">
           {items.map((item, i) => (
@@ -157,12 +114,6 @@ export default function Cart() {
               <div className="flex justify-between text-sm">
                 <span className="text-gold">Descuento ({decantCount >= 5 ? '15%' : '10%'})</span>
                 <span className="text-gold font-medium">-S/{discount.toFixed(2)}</span>
-              </div>
-            )}
-            {couponApplied && couponDiscount > 0 && (
-              <div className="flex justify-between text-sm">
-                <span className="text-gold">Cupón CYBERWOW</span>
-                <span className="text-gold font-medium">-S/{couponDiscount.toFixed(2)}</span>
               </div>
             )}
             <div className="border-t border-black/10 pt-3 flex justify-between">

@@ -3,14 +3,6 @@ import { Link } from 'react-router-dom'
 
 const slides = [
   {
-    title: 'CYBER WOW',
-    subtitle: 'Hasta 20% dcto',
-    subsubtitle: 'Agregando el cupón CYBERWOW',
-    cta: 'Ver Promociones',
-    link: '/promociones',
-    accent: '🎉 Oferta Especial',
-  },
-  {
     title: 'Decants Premium',
     subtitle: 'Prueba antes de invertir. Decants de 3ml, 5ml y 10ml',
     cta: 'Ver Decants',
@@ -67,14 +59,9 @@ export default function HeroBanner() {
               <h1 className="text-5xl sm:text-6xl lg:text-7xl font-display font-bold text-white leading-tight mb-6">
                 {slide.title}
               </h1>
-              <p className="text-lg sm:text-xl text-white/60 mb-2 leading-relaxed">
+              <p className="text-lg sm:text-xl text-white/60 mb-10 leading-relaxed">
                 {slide.subtitle}
               </p>
-              {slide.subsubtitle && (
-                <p className="text-base sm:text-lg text-gold/90 mb-10 font-medium">
-                  {slide.subsubtitle}
-                </p>
-              )}
               <Link
                 to={slide.link}
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gold text-black font-semibold rounded-lg hover:bg-gold-light transition-all duration-300 group"

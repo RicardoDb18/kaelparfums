@@ -15,36 +15,6 @@ export default function Promociones() {
         </div>
 
         <div className="max-w-4xl mx-auto">
-          <div className="bg-gradient-to-r from-amber-50 to-transparent border border-amber-200 rounded-2xl p-8 mb-8 text-center">
-            <h2 className="text-2xl font-display font-bold text-black mb-3">🔥 CYBER WOW — Cupón CYBERWOW</h2>
-            <p className="text-black/50 mb-4 max-w-lg mx-auto">
-              Agrega el cupón <strong className="text-amber-600">CYBERWOW</strong> en tu carrito y obtén descuentos adicionales acumulables con promociones vigentes.
-            </p>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-md mx-auto">
-              <div className="bg-white rounded-xl p-4 border border-amber-200">
-                <p className="text-xs text-black/40 uppercase tracking-wider mb-1">Decants</p>
-                <p className="text-3xl font-display font-bold text-amber-600">10%</p>
-                <p className="text-xs text-black/50 mt-1">OFF</p>
-              </div>
-              <div className="bg-white rounded-xl p-4 border border-amber-200">
-                <p className="text-xs text-black/40 uppercase tracking-wider mb-1">Perfumes</p>
-                <p className="text-3xl font-display font-bold text-amber-600">20%</p>
-                <p className="text-xs text-black/50 mt-1">OFF</p>
-              </div>
-            </div>
-            <div className="mt-6">
-              <Link
-                to="/shop"
-                className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-black font-semibold rounded-lg hover:bg-gold-light transition-all"
-              >
-                Explorar Perfumes
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
-              </Link>
-            </div>
-          </div>
-
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
             <div className="bg-gradient-to-br from-amber-50 to-amber-50/50 rounded-2xl p-8 border border-amber-200 text-center">
               <div className="w-16 h-16 rounded-full bg-amber-100 flex items-center justify-center mx-auto mb-5">
