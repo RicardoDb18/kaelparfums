@@ -15,6 +15,7 @@ export interface Product {
   reviews: number
   isNew?: boolean
   isDecant?: boolean
+  tiktokUrl?: string
 }
 
 export interface Concentration {

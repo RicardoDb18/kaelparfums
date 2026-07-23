@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { products } from '../data/products'
 import { useCart } from '../context/CartContext'
 import ProductCard from '../components/product/ProductCard'
+import TikTokEmbed from '../components/product/TikTokEmbed'
 
 function typeLabel(t: string) {
   return t === 'arabes' ? 'Perfumes Árabes' : t === 'disenador' ? 'Perfumes de Diseñador' : 'Perfumes de Nicho'
@@ -45,14 +46,17 @@ export default function ProductDetail() {
         </nav>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 mb-20">
-          <div className="aspect-square rounded-2xl bg-black flex items-center justify-center">
-            {product.images[0] ? (
-              <img src={import.meta.env.BASE_URL + product.images[0]} alt={product.name} className="w-full h-full object-cover rounded-2xl" />
-            ) : (
-              <div className="text-white/5 text-[12rem] font-display font-bold select-none">
-                {product.brand.charAt(0)}
-              </div>
-            )}
+          <div className="space-y-6">
+            <div className="aspect-square rounded-2xl bg-black flex items-center justify-center">
+              {product.images[0] ? (
+                <img src={import.meta.env.BASE_URL + product.images[0]} alt={product.name} className="w-full h-full object-cover rounded-2xl" />
+              ) : (
+                <div className="text-white/5 text-[12rem] font-display font-bold select-none">
+                  {product.brand.charAt(0)}
+                </div>
+              )}
+            </div>
+            {product.tiktokUrl && <TikTokEmbed url={product.tiktokUrl} />}
           </div>
 
           <div>

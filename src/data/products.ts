@@ -39,6 +39,7 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/erbapura.webp'], rating: 4.8, reviews: 312, isNew: true,
+    tiktokUrl: 'https://www.tiktok.com/@elgueydelosperfumes/video/7282574601073233157',
   },
   {
     id: '2',
@@ -57,6 +58,7 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/tonka.webp'], rating: 4.7, reviews: 245, isNew: true,
+    tiktokUrl: 'https://www.tiktok.com/@elgueydelosperfumes/video/7408348068803906821',
   },
   {
     id: '3',
@@ -130,6 +132,7 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/valentinobirint.webp'], rating: 4.7, reviews: 234, isNew: false,
+    tiktokUrl: 'https://www.tiktok.com/@alefloresg27/video/7423460398449413382',
   },
   {
     id: 'd2',
@@ -148,6 +151,7 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/coral.webp'], rating: 4.6, reviews: 209, isNew: false,
+    tiktokUrl: 'https://www.tiktok.com/@pedritoacorrea/video/7625454697117191445',
   },
   {
     id: 'd3',
@@ -165,6 +169,7 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/kenzo.webp'], rating: 4.5, reviews: 167,
+    tiktokUrl: 'https://www.tiktok.com/@marcelperfumes/video/7614941286352588054',
   },
   {
     id: 'd4',
@@ -183,6 +188,7 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/tmwparfum.webp'], rating: 4.6, reviews: 298, isNew: false,
+    tiktokUrl: 'https://www.tiktok.com/@rossperfumes/video/7656651472418917653',
   },
   {
     id: 'd5',
@@ -201,6 +207,7 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/swyi.webp'], rating: 4.7, reviews: 356, isNew: false,
+    tiktokUrl: 'https://www.tiktok.com/@fiorito.perfumes/video/7524144302511951111',
   },
   {
     id: 'd6',
@@ -292,6 +299,7 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/goldedition.webp'], rating: 4.7, reviews: 278, isNew: false,
+    tiktokUrl: 'https://www.tiktok.com/@basti.rojasss/video/7633639578787695880',
   },
   {
     id: 'a2',
@@ -310,6 +318,7 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/kingdom.webp'], rating: 4.5, reviews: 209, isNew: false,
+    tiktokUrl: 'https://www.tiktok.com/@nicolasgianfranco_/video/7456294752602885381',
   },
   {
     id: 'a3',
