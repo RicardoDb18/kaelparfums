@@ -5,7 +5,7 @@ import { useCart } from '../context/CartContext'
 type ShippingMethod = 'shalom' | 'delivery' | 'tienda' | null
 
 export default function Checkout() {
-  const { items, total, discount, decantCount, subtotal, couponCode, couponDiscount, clearCart } = useCart()
+  const { items, total, discount, decantCount, subtotal, couponDiscount, clearCart } = useCart()
   const navigate = useNavigate()
   const [method, setMethod] = useState<ShippingMethod>(null)
   const [form, setForm] = useState({
