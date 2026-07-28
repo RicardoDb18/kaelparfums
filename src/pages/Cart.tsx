@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 
@@ -7,7 +8,9 @@ const typeLabels: Record<string, string> = {
 
 export default function Cart() {
   const navigate = useNavigate()
-  const { items, totalItems, decantCount, subtotal, discount, total, removeFromCart, updateQuantity, clearCart } = useCart()
+  const { items, totalItems, decantCount, subtotal, discount, total, removeFromCart, updateQuantity, clearCart, couponCode, couponDiscount, applyCoupon, clearCoupon } = useCart()
+  const [couponInput, setCouponInput] = useState('')
+  const [couponMsg, setCouponMsg] = useState('')
 
   if (items.length === 0) {
     return (
@@ -106,6 +109,38 @@ export default function Cart() {
 
         <div className="max-w-md sm:ml-auto w-full">
           <div className="bg-zinc-50 rounded-2xl border border-black/5 p-6 space-y-3">
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                value={couponInput}
+                onChange={e => { setCouponInput(e.target.value); setCouponMsg('') }}
+                placeholder="Código de descuento"
+                disabled={!!couponCode}
+                className="flex-1 px-3 py-2 border border-black/10 rounded-lg text-sm focus:outline-none focus:border-gold transition-colors disabled:opacity-50"
+              />
+              {couponCode ? (
+                <button onClick={() => { clearCoupon(); setCouponInput(''); setCouponMsg('') }} className="px-3 py-2 text-sm text-black/40 hover:text-black transition-colors">
+                  Quitar
+                </button>
+              ) : (
+                <button
+                  onClick={() => {
+                    const ok = applyCoupon(couponInput)
+                    setCouponMsg(ok ? '✅ Cupón aplicado' : '❌ Código inválido')
+                  }}
+                  className="px-4 py-2 bg-black text-white text-sm font-medium rounded-lg hover:bg-black/80 transition-colors"
+                >
+                  Aplicar
+                </button>
+              )}
+            </div>
+            {couponMsg && <p className={`text-xs ${couponMsg.includes('✅') ? 'text-green-600' : 'text-red-500'}`}>{couponMsg}</p>}
+            {couponCode && (
+              <div className="flex justify-between text-sm">
+                <span className="text-green-600">Cupón KAEL20 (-S/20 c/u)</span>
+                <span className="text-green-600 font-medium">-S/{couponDiscount.toFixed(2)}</span>
+              </div>
+            )}
             <div className="flex justify-between text-sm">
               <span className="text-black/50">Subtotal</span>
               <span className="text-black font-medium">S/{subtotal.toFixed(2)}</span>

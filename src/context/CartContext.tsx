@@ -20,6 +20,10 @@ interface CartContextType {
   decantCount: number
   subtotal: number
   discount: number
+  couponCode: string
+  couponDiscount: number
+  applyCoupon: (code: string) => boolean
+  clearCoupon: () => void
   total: number
   showToast: boolean
   toastMessage: string
@@ -32,6 +36,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([])
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState('')
+  const [couponCode, setCouponCode] = useState('')
+  const VALID_COUPON = 'KAEL20'
 
   const dismissToast = useCallback(() => setShowToast(false), [])
 
@@ -68,7 +74,17 @@ export function CartProvider({ children }: { children: ReactNode }) {
     setItems([])
   }, [])
 
-  const { totalItems, decantCount, subtotal, discount } = useMemo(() => {
+  const applyCoupon = useCallback((code: string) => {
+    if (code.toUpperCase().trim() !== VALID_COUPON) return false
+    setCouponCode(VALID_COUPON)
+    return true
+  }, [])
+
+  const clearCoupon = useCallback(() => {
+    setCouponCode('')
+  }, [])
+
+  const { totalItems, decantCount, subtotal, discount, couponDiscount } = useMemo(() => {
     const totalItems = items.reduce((s, i) => s + i.quantity, 0)
 
     const discountableItems = items.filter(i => !i.onDemand && i.product.categoryType !== 'nicho')
@@ -79,15 +95,20 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const discountRate = decantCount >= 6 ? 0.15 : decantCount >= 3 ? 0.10 : 0
     const discount = decantSubtotal * discountRate
 
-    return { totalItems, decantCount, subtotal, discount }
-  }, [items])
+    const couponDiscount = couponCode === VALID_COUPON
+      ? items.reduce((s, i) => s + (i.ml > 10 ? i.quantity * 20 : 0), 0)
+      : 0
 
-  const total = subtotal - discount
+    return { totalItems, decantCount, subtotal, discount, couponDiscount }
+  }, [items, couponCode])
+
+  const total = subtotal - discount - couponDiscount
 
   return (
     <CartContext.Provider value={{
       items, addToCart, removeFromCart, updateQuantity, clearCart,
       totalItems, decantCount, subtotal, discount,
+      couponCode, couponDiscount, applyCoupon, clearCoupon,
       total,
       showToast, toastMessage, dismissToast,
     }}>
