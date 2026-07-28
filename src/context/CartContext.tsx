@@ -96,7 +96,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const discount = decantSubtotal * discountRate
 
     const couponDiscount = couponCode === VALID_COUPON
-      ? items.reduce((s, i) => s + (i.ml > 10 ? i.quantity * 20 : 0), 0)
+      ? items.reduce((s, i) => s + (!i.onDemand && i.ml > 10 ? i.quantity * 20 : 0), 0)
       : 0
 
     return { totalItems, decantCount, subtotal, discount, couponDiscount }
