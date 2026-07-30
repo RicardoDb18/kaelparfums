@@ -1,11 +1,12 @@
 import { useState, type ReactNode } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
+import { WHATSAPP_LINK } from '../constants'
 
 type ShippingMethod = 'shalom' | 'delivery' | 'tienda' | null
 
 export default function Checkout() {
-  const { items, total, discount, decantCount, subtotal, couponDiscount, clearCart } = useCart()
+  const { items, total, discount, decantCount, subtotal, couponCode, couponDiscount, clearCart } = useCart()
   const navigate = useNavigate()
   const [method, setMethod] = useState<ShippingMethod>(null)
   const [form, setForm] = useState({
@@ -15,6 +16,10 @@ export default function Checkout() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
+  }
+
+  const handleMethodChange = (m: ShippingMethod) => {
+    setMethod(m)
   }
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -61,11 +66,11 @@ export default function Checkout() {
 
     lines.push('', '💰 *Resumen*', `Subtotal: S/${subtotal.toFixed(2)}`)
     if (discount > 0) lines.push(`Descuento (${decantCount >= 6 ? '15%' : '10%'}): -S/${discount.toFixed(2)}`)
-    if (couponDiscount > 0) lines.push(`Cupón KAEL20: -S/${couponDiscount.toFixed(2)}`)
+    if (couponDiscount > 0) lines.push(`Cupón ${couponCode}: -S/${couponDiscount.toFixed(2)}`)
     lines.push(`*Total: S/${total.toFixed(2)}*`)
 
-    const msg = encodeURIComponent(lines.join('\n'))
-    window.open(`https://wa.me/51918123682?text=${msg}`, '_blank')
+    const msg = lines.join('\n')
+    window.open(WHATSAPP_LINK(msg), '_blank')
 
     setSubmitted(true)
     setTimeout(() => {
@@ -142,7 +147,7 @@ export default function Checkout() {
               {shippingOptions.map(opt => (
                 <button
                   key={opt.value}
-                  onClick={() => {       setMethod(opt.value); setForm({ nombres: '', dni: '', celular: '', destino: '', direccion: '', referencia: '', distrito: '' }) }}
+                  onClick={() => handleMethodChange(opt.value)}
                   className={`w-full flex items-center gap-4 p-4 rounded-xl border text-left transition-all ${
                     method === opt.value
                       ? 'border-gold bg-gold/5'
@@ -295,7 +300,7 @@ export default function Checkout() {
                 )}
                 {couponDiscount > 0 && (
                   <div className="flex justify-between text-sm">
-                    <span className="text-green-600">Cupón KAEL20</span>
+                    <span className="text-green-600">Cupón {couponCode}</span>
                     <span className="text-green-600">-S/{couponDiscount.toFixed(2)}</span>
                   </div>
                 )}

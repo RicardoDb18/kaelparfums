@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { WHATSAPP_LINK } from '../constants'
 
 export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
@@ -6,6 +7,15 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const msg = [
+      `*Nuevo mensaje de contacto — Kael Parfums*`,
+      ``,
+      `👤 *Nombre:* ${form.name}`,
+      `📧 *Correo:* ${form.email}`,
+      `📋 *Asunto:* ${form.subject}`,
+      `💬 *Mensaje:* ${form.message}`,
+    ].join('\n')
+    window.open(WHATSAPP_LINK(msg), '_blank')
     setSent(true)
   }
 
@@ -97,17 +107,17 @@ export default function Contact() {
               <div className="bg-zinc-50 rounded-2xl border border-black/5 p-8">
                 <h3 className="text-lg font-display font-semibold text-black mb-6">Información de Contacto</h3>
                 <div className="space-y-5">
-                  <div className="flex items-start gap-4">
+                  <a href={WHATSAPP_LINK('Hola, tengo una consulta')} target="_blank" rel="noopener noreferrer" className="flex items-start gap-4 group">
                     <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                       </svg>
                     </div>
                     <div>
-                      <p className="font-medium text-black text-sm">Teléfono</p>
-                      <p className="text-black/50 text-sm mt-1">+51 999 888 777</p>
+                      <p className="font-medium text-black text-sm group-hover:text-gold transition-colors">WhatsApp</p>
+                      <p className="text-black/50 text-sm mt-1">+51 918 123 682</p>
                     </div>
-                  </div>
+                  </a>
                   <div className="flex items-start gap-4">
                     <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gold" fill="none" viewBox="0 0 24 24" stroke="currentColor">

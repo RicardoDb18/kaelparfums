@@ -20,7 +20,7 @@ const slides = [
     title: 'Perfumes de Diseñador',
     subtitle: 'Las fragancias más icónicas de las marcas más reconocidas',
     cta: 'Explorar Diseñadores',
-    link: '/shop?type=diseñadores',
+    link: '/shop?type=disenador',
     accent: 'Colección Diseñadores',
   },
   {

@@ -25,12 +25,20 @@ export default function Cart() {
             </svg>
             <h2 className="text-2xl font-display font-semibold text-black mb-3">Tu carrito está vacío</h2>
             <p className="text-black/50 mb-8">Explora nuestro catálogo y descubre fragancias exclusivas.</p>
-            <Link to="/shop" className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-black font-semibold rounded-lg hover:bg-gold-light transition-colors">
-              Ir al Catálogo
-              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
+            <div className="flex flex-col sm:flex-row items-center gap-3 justify-center">
+              <Link to="/shop" className="inline-flex items-center gap-2 px-8 py-3.5 bg-gold text-black font-semibold rounded-lg hover:bg-gold-light transition-colors">
+                Ir al Catálogo
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+              </Link>
+              <Link to="/decants" className="inline-flex items-center gap-2 px-8 py-3.5 border border-gold text-gold font-semibold rounded-lg hover:bg-gold/5 transition-colors">
+                Ver Decants
+              </Link>
+              <Link to="/promociones" className="text-sm text-black/40 hover:text-gold transition-colors">
+                Promociones
+              </Link>
+            </div>
           </div>
         </div>
       </main>
@@ -137,7 +145,7 @@ export default function Cart() {
             {couponMsg && <p className={`text-xs ${couponMsg.includes('✅') ? 'text-green-600' : 'text-red-500'}`}>{couponMsg}</p>}
             {couponCode && (
               <div className="flex justify-between text-sm">
-                <span className="text-green-600">Cupón KAEL20 (-S/20 c/u)</span>
+                <span className="text-green-600">Cupón {couponCode} (-S/20 c/u)</span>
                 <span className="text-green-600 font-medium">-S/{couponDiscount.toFixed(2)}</span>
               </div>
             )}
@@ -147,7 +155,7 @@ export default function Cart() {
             </div>
             {discount > 0 && (
               <div className="flex justify-between text-sm">
-                <span className="text-gold">Descuento ({decantCount >= 5 ? '15%' : '10%'})</span>
+                <span className="text-gold">Descuento ({decantCount >= 6 ? '15%' : '10%'})</span>
                 <span className="text-gold font-medium">-S/{discount.toFixed(2)}</span>
               </div>
             )}

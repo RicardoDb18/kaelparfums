@@ -73,6 +73,9 @@ export default function Navbar() {
             <button onClick={scrollToCotiza} className="block text-sm font-medium text-black/70 hover:text-gold">Cotiza</button>
             <Link to="/promociones" className="block text-sm font-medium text-gold hover:text-gold-light" onClick={() => setMenuOpen(false)}>Promociones</Link>
             <Link to="/brands" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Marcas</Link>
+            <Link to="/about" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Nosotros</Link>
+            <Link to="/contact" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Contacto</Link>
+            <Link to="/decants" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Decants</Link>
           </div>
         </div>
       )}

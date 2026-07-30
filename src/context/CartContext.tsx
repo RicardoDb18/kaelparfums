@@ -32,51 +32,74 @@ interface CartContextType {
 
 const CartContext = createContext<CartContextType | null>(null)
 
+function loadCart(): CartItem[] {
+  try {
+    const saved = localStorage.getItem('kael_cart')
+    if (saved) return JSON.parse(saved)
+  } catch {}
+  return []
+}
+
+const VALID_COUPONS = ['KAEL20', 'SEBAS1028']
+
 export function CartProvider({ children }: { children: ReactNode }) {
-  const [items, setItems] = useState<CartItem[]>([])
+  const [items, setItems] = useState<CartItem[]>(loadCart)
   const [showToast, setShowToast] = useState(false)
   const [toastMessage, setToastMessage] = useState('')
   const [couponCode, setCouponCode] = useState('')
-  const VALID_COUPON = 'KAEL20'
 
   const dismissToast = useCallback(() => setShowToast(false), [])
+
+  const persist = useCallback((next: CartItem[]) => {
+    localStorage.setItem('kael_cart', JSON.stringify(next))
+  }, [])
 
   const addToCart = useCallback((product: Product, concentrationType: string, ml: number, price: number, quantity: number, onDemand?: boolean) => {
     setItems(prev => {
       const existingIndex = prev.findIndex(
         i => i.product.id === product.id && i.concentrationType === concentrationType && i.ml === ml
       )
+      let next: CartItem[]
       if (existingIndex >= 0) {
-        const next = [...prev]
+        next = [...prev]
         next[existingIndex] = { ...next[existingIndex], quantity: next[existingIndex].quantity + quantity }
-        return next
+      } else {
+        next = [...prev, { product, concentrationType, ml, price, quantity, onDemand }]
       }
-      return [...prev, { product, concentrationType, ml, price, quantity, onDemand }]
+      persist(next)
+      return next
     })
     setToastMessage(`${product.name} ${ml}ml x${quantity} agregado al carrito`)
     setShowToast(true)
     setTimeout(() => setShowToast(false), 3000)
-  }, [])
+  }, [persist])
 
   const removeFromCart = useCallback((index: number) => {
-    setItems(prev => prev.filter((_, i) => i !== index))
-  }, [])
+    setItems(prev => {
+      const next = prev.filter((_, i) => i !== index)
+      persist(next)
+      return next
+    })
+  }, [persist])
 
   const updateQuantity = useCallback((index: number, quantity: number) => {
     setItems(prev => {
       const next = [...prev]
       next[index] = { ...next[index], quantity: Math.max(1, quantity) }
+      persist(next)
       return next
     })
-  }, [])
+  }, [persist])
 
   const clearCart = useCallback(() => {
     setItems([])
-  }, [])
+    persist([])
+  }, [persist])
 
   const applyCoupon = useCallback((code: string) => {
-    if (code.toUpperCase().trim() !== VALID_COUPON) return false
-    setCouponCode(VALID_COUPON)
+    const trimmed = code.toUpperCase().trim()
+    if (!VALID_COUPONS.includes(trimmed)) return false
+    setCouponCode(trimmed)
     return true
   }, [])
 
@@ -95,7 +118,7 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const discountRate = decantCount >= 6 ? 0.15 : decantCount >= 3 ? 0.10 : 0
     const discount = decantSubtotal * discountRate
 
-    const couponDiscount = couponCode === VALID_COUPON
+    const couponDiscount = VALID_COUPONS.includes(couponCode)
       ? items.reduce((s, i) => s + (!i.onDemand && i.ml > 10 ? i.quantity * 20 : 0), 0)
       : 0
 

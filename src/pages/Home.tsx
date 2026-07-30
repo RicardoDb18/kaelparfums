@@ -3,6 +3,7 @@ import HeroBanner from '../components/home/HeroBanner'
 import FeaturedProducts from '../components/home/FeaturedProducts'
 import BrandSlider from '../components/home/BrandSlider'
 import Newsletter from '../components/home/Newsletter'
+import { WHATSAPP_LINK } from '../constants'
 
 const categories = [
   { name: 'Árabes', slug: 'type=arabes', count: '+30', gradient: 'from-amber-900 to-black', icon: 'M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z' },
@@ -16,8 +17,7 @@ export default function Home() {
 
   const handleQuote = () => {
     if (!perfumeQuery.trim()) return
-    const msg = encodeURIComponent(`¡Hola! Quiero cotizar el perfume: ${perfumeQuery.trim()}`)
-    window.open(`https://wa.me/51918123682?text=${msg}`, '_blank')
+    window.open(WHATSAPP_LINK(`¡Hola! Quiero cotizar el perfume: ${perfumeQuery.trim()}`), '_blank')
   }
 
   return (
