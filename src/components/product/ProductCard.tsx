@@ -22,6 +22,8 @@ const brandColors: Record<string, string> = {
   'Al Haramain': 'bg-zinc-800',
   'Maison Alhambra': 'bg-zinc-800',
   Zimaya: 'bg-zinc-800',
+  'French Avenue': 'bg-zinc-800',
+  'Game of Spades': 'bg-zinc-800',
 }
 
 const typeColors: Record<string, string> = {

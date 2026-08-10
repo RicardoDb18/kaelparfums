@@ -18,6 +18,8 @@ export const brands: Brand[] = [
   { id: '15', name: 'Maison Alhambra', logo: '', description: 'Perfumería árabe contemporánea', slug: 'maison-alhambra' },
   { id: '16', name: 'Zimaya', logo: '', description: 'Perfumería árabe contemporánea', slug: 'zimaya' },
   { id: '17', name: 'Rayhaan', logo: '', description: 'Perfumería árabe contemporánea', slug: 'rayhaan' },
+  { id: '18', name: 'French Avenue', logo: '', description: 'Perfumería árabe de lujo', slug: 'french-avenue' },
+  { id: '19', name: 'Game of Spades', logo: '', description: 'Lujo estadounidense audaz', slug: 'game-of-spades' },
 ]
 
 export const products: Product[] = [
@@ -280,6 +282,24 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/adgprofondo.webp'], rating: 4.7, reviews: 534, isNew: false,
+  },
+  {
+    id: 'd10',
+    name: 'Wildcard',
+    brand: 'Game of Spades',
+    description: 'Una fragancia floral amaderada almizclada unisex que abre con flores, bergamota y cilantro, revelando un corazón de manzana, ambroxan y vainilla, sobre una base de notas amaderadas, haba tonka y ámbar gris. Inspirado en Lafayette Street de Bond No. 9.',
+    notes: ['Flores', 'Bergamota', 'Cilantro', 'Manzana', 'Ambroxan', 'Vainilla', 'Notas amaderadas', 'Haba tonka', 'Ámbar gris'],
+    categoryType: 'disenador',
+    gender: 'unisex',
+    concentrations: [
+      { type: 'Parfum', sizes: [
+        { ml: 3, price: 23, inStock: true },
+        { ml: 5, price: 35, inStock: true },
+        { ml: 10, price: 69, inStock: true },
+        { ml: 100, price: 299, inStock: false },
+      ]},
+    ],
+    images: ['images/wildcard.jpg'], rating: 4.5, reviews: 140, isNew: true,
   },
 
   // ============ ÁRABES ============
@@ -838,5 +858,23 @@ export const products: Product[] = [
       ]},
     ],
     images: ['images/mandarin.webp'], rating: 4.4, reviews: 318, isNew: false,
+  },
+  {
+    id: 'a32',
+    name: 'Liquid Brun Limited Edition',
+    brand: 'French Avenue',
+    description: 'Una fragancia oriental fougère unisex que abre con cardamomo, lavanda y cítricos, revelando un corazón de azahar, madera de guayaco y rosa, sobre una base cálida de vainilla, haba tonka, ámbar y musgo de roble. Inspirado en Althair de Parfums de Marly.',
+    notes: ['Cardamomo', 'Lavanda', 'Cítricos', 'Azahar', 'Madera de guayaco', 'Rosa', 'Vainilla', 'Haba tonka', 'Ámbar', 'Musgo de roble'],
+    categoryType: 'arabes',
+    gender: 'unisex',
+    concentrations: [
+      { type: 'Extrait', sizes: [
+        { ml: 3, price: 15, inStock: true },
+        { ml: 5, price: 20, inStock: true },
+        { ml: 10, price: 35, inStock: true },
+        { ml: 150, price: 219, inStock: false },
+      ]},
+    ],
+    images: ['images/liquidbrun.jpg'], rating: 4.5, reviews: 160, isNew: true,
   },
 ]

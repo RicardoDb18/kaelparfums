@@ -1,14 +1,23 @@
 import { useState, useEffect } from 'react'
-import { Link, useLocation, useNavigate } from 'react-router-dom'
+import type { FormEvent } from 'react'
+import { Link, useLocation, useNavigate, useSearchParams } from 'react-router-dom'
 import { useCart } from '../../context/CartContext'
 
 export default function Navbar() {
   const { pathname } = useLocation()
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
   const { totalItems } = useCart()
   const [menuOpen, setMenuOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [query, setQuery] = useState(searchParams.get('search') || '')
   const isHome = pathname === '/'
+
+  const handleSearch = (e: FormEvent) => {
+    e.preventDefault()
+    setMenuOpen(false)
+    navigate(`/shop${query.trim() ? `?search=${encodeURIComponent(query.trim())}` : ''}`)
+  }
 
   const scrollToCotiza = () => {
     setMenuOpen(false)
@@ -44,6 +53,21 @@ export default function Navbar() {
             <Link to="/brands" className="text-sm font-medium text-gold hover:text-gold-light transition-colors">Marcas</Link>
           </nav>
 
+          <form onSubmit={handleSearch} className="hidden md:flex items-center">
+            <div className="relative">
+              <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-black/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+              </svg>
+              <input
+                type="text"
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                placeholder="Buscar perfume..."
+                className="w-40 lg:w-56 pl-9 pr-3 py-2 border border-black/10 rounded-lg text-sm focus:outline-none focus:border-gold transition-colors"
+              />
+            </div>
+          </form>
+
           <div className="flex items-center gap-4">
             <Link to="/cart" className="relative p-2 text-black/70 hover:text-gold transition-colors">
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -66,6 +90,20 @@ export default function Navbar() {
       {menuOpen && (
         <div className="lg:hidden bg-white border-t border-black/5">
           <div className="px-6 py-4 space-y-3">
+            <form onSubmit={handleSearch} className="md:hidden">
+              <div className="relative">
+                <svg xmlns="http://www.w3.org/2000/svg" className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-black/40" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-4.35-4.35M17 11a6 6 0 11-12 0 6 6 0 0112 0z" />
+                </svg>
+                <input
+                  type="text"
+                  value={query}
+                  onChange={e => setQuery(e.target.value)}
+                  placeholder="Buscar perfume..."
+                  className="w-full pl-9 pr-3 py-2.5 border border-black/10 rounded-lg text-sm focus:outline-none focus:border-gold transition-colors"
+                />
+              </div>
+            </form>
             <Link to="/" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Inicio</Link>
             <Link to="/shop?type=arabes" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Árabes</Link>
             <Link to="/shop?type=disenador" className="block text-sm font-medium text-black/70 hover:text-gold" onClick={() => setMenuOpen(false)}>Diseñador</Link>

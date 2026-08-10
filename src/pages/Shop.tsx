@@ -23,9 +23,10 @@ export default function Shop() {
   const typeParam = searchParams.get('type') as CategoryType | null
   const genderParam = searchParams.get('gender') as string | null
   const brandParam = searchParams.get('brand')
+  const searchParam = searchParams.get('search')
 
   const [showFilters, setShowFilters] = useState(false)
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState(searchParam || '')
   const [activeType, setActiveType] = useState<CategoryType | 'todas'>(typeParam || 'todas')
   const [activeGender, setActiveGender] = useState<string>(genderParam || 'todas')
   const [activeBrand, setActiveBrand] = useState(brandParam || '')
@@ -35,6 +36,7 @@ export default function Shop() {
     setActiveType(typeParam || 'todas')
     setActiveGender(genderParam || 'todas')
     setActiveBrand(brandParam || '')
+    setSearch(searchParam || '')
   }, [searchParams])
 
   const filtered = useMemo(() => {
