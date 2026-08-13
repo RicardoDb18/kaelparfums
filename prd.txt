@@ -1,0 +1,75 @@
+Título:
+Implementación de una plataforma de evaluación de automatización robótica de procesos
+para reducir el tiempo de análisis y desarrollo en una consultora de TI, Lima, 2026.
+
+I. Capítulo I
+1.1. Planteamiento de la investigación
+1.1.1 Planteamiento del problema
+La digitalización y automatización de actividades administrativas permiten sustituir
+determinadas tareas manuales y repetitivas dentro de los procesos empresariales. En
+consultoras de TI, la automatización robótica de procesos (RPA) requiere que los equipos
+identifiquen, evalúen y documenten los procesos candidatos antes de iniciar el desarrollo,
+etapa en la que decisiones incorrectas o incompletas pueden comprometer los tiempos
+estimados del proyecto.
+
+En una consultora de TI ubicada en Lima, la selección de procesos a automatizar y la
+elaboración de los documentos de diseño de procesos (PDD) se realizan de forma manual,
+sin criterios estandarizados de priorización ni una plataforma única de evaluación. Para
+el caso de estudio, se identificó una demora del 30% del tiempo estimado del proyecto
+derivada de definiciones incorrectas y/o incompletas formuladas inicialmente, además del
+retraso en más del 50% de los proyectos por la inconsistencia de los documentos de diseño
+(PDD). Estos datos corresponden a los registros de gestión de proyectos y a las
+herramientas de seguimiento disponibles; en una tesis real, deberán ser corroborados con
+registros verificables de la organización.
+[En una investigación real, este planteamiento deberá complementarse con antecedentes y
+estudios relacionados con automatización robótica de procesos, plataformas de evaluación
+de automatización y eficiencia en el ciclo de vida de proyectos RPA, de modo que la
+problemática de la organización pueda contrastarse con evidencia académica previa.]
+
+La ejecución manual de las actividades de análisis, priorización y documentación de los
+procesos genera una brecha en el tiempo requerido para completar las etapas de análisis y
+desarrollo de los proyectos RPA. La ausencia de una evaluación estandarizada puede
+ocasionar la selección de procesos poco viables, duplicidad de esfuerzos, necesidades de
+reprocesar los PDD y el incumplimiento de las estimaciones iniciales, lo que prolonga la
+duración de los proyectos. En consecuencia, resulta necesario analizar alternativas que
+permitan intervenir sobre las actividades de análisis que concentran una mayor carga
+operativa y riesgo de error.
+
+Ante esta situación, se plantea evaluar la implementación de una plataforma de evaluación
+de automatización robótica de procesos para estandarizar la priorización de procesos
+candidatos y la elaboración de los PDD, y determinar su efecto sobre el tiempo de análisis
+y desarrollo de los proyectos durante el año 2026.
+1.2. Formulación del problema
+1.2.1 Problema general
+¿En qué medida la implementación de una plataforma de evaluación de automatización
+robótica de procesos reduce el tiempo de análisis y desarrollo en una consultora de TI,
+Lima, 2026?
+1.2.2 Problemas específicos
+PE1. ¿En qué medida la implementación de la plataforma de evaluación mejora la
+priorización de los procesos candidatos a automatizar en una consultora de TI, Lima, 2026?
+PE2. ¿En qué medida la implementación de la plataforma de evaluación reduce el tiempo de
+elaboración y la inconsistencia de los PDD en los proyectos de automatización de una
+consultora de TI, Lima, 2026?
+PE3. ¿En qué medida la implementación de la plataforma de evaluación mejora el
+cumplimiento de las estimaciones iniciales de desarrollo en una consultora de TI, Lima,
+2026?
+1.3. Justificación de la investigación
+1.3.1 Justificación teórica
+La investigación permitirá aportar evidencia sobre la aplicación de plataformas de
+evaluación en el contexto de la automatización robótica de procesos y su relación con la
+eficiencia del ciclo de vida de proyectos RPA en consultoras de TI. Asimismo, permitirá
+contextualizar la aplicación de criterios estandarizados de priorización y documentación
+de procesos dentro de una organización peruana.
+1.3.2 Justificación práctica
+La investigación podrá contribuir a reducir el tiempo de análisis y desarrollo de los
+proyectos RPA mediante la estandarización de la evaluación de procesos actualmente
+ejecutada de manera manual. Los resultados podrán brindar información útil a los
+responsables de los proyectos para seleccionar mejor los procesos a automatizar, elaborar
+PDD consistentes y favorecer el cumplimiento de las estimaciones iniciales de desarrollo.
+1.3.3 Justificación metodológica
+La investigación permitirá establecer un procedimiento para medir y comparar el tiempo de
+análisis y desarrollo de los proyectos antes y después de la implementación de la
+plataforma de evaluación, utilizando los registros de gestión de proyectos y las
+herramientas de seguimiento disponibles y criterios estandarizados de medición. Este
+procedimiento podrá servir como referencia para evaluar posteriormente otras actividades
+de consultoría que presenten características similares.

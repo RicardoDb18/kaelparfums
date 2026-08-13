@@ -1,0 +1,70 @@
+Ejemplo:
+Implementación de automatización robótica de procesos para reducir el tiempo de
+registro de solicitudes en una empresa de servicios, Lima, 2026.
+I. Capítulo I
+1.1. Planteamiento de la investigación
+1.1.1 Planteamiento del problema
+La digitalización y automatización de actividades administrativas permiten sustituir
+determinadas tareas manuales y repetitivas dentro de los procesos empresariales. En
+actividades que requieren registrar, verificar y transferir información de manera
+recurrente, la ejecución manual puede demandar un tiempo considerable y generar
+reprocesos que afectan la eficiencia de la operación.
+En una empresa de servicios ubicada en Lima, el proceso de registro de solicitudes se
+realiza manualmente mediante diferentes archivos utilizados por los responsables
+del proceso. Para el caso didáctico desarrollado en clase, se identificó un tiempo
+aproximado de 22 minutos por solicitud, además de errores durante el registro y una
+trazabilidad fragmentada de la información entre los responsables del proceso. Estos
+elementos corresponden al ejemplo utilizado en las diapositivas y, en una tesis real,
+deberán ser sustituidos o corroborados con registros verificables de la empresa.
+[En una investigación real, este planteamiento deberá complementarse con
+antecedentes y estudios relacionados con automatización robótica de procesos,
+digitalización y eficiencia de procesos administrativos, de modo que la problemática
+de la organización pueda contrastarse con evidencia académica previa.]
+La ejecución manual de actividades de ingreso, validación y transferencia de datos
+genera una brecha en el tiempo requerido para completar el registro de las
+solicitudes. La utilización de múltiples archivos puede ocasionar duplicidad de
+actividades, necesidad de efectuar verificaciones adicionales y reprocesos que
+prolongan la duración del proceso. En consecuencia, resulta necesario analizar
+alternativas que permitan intervenir sobre las actividades repetitivas que concentran
+una mayor carga operativa.
+Ante esta situación, se plantea evaluar la implementación de automatización robótica
+de procesos (RPA) para automatizar determinadas actividades asociadas al registro
+de solicitudes y determinar su efecto sobre el tiempo requerido para completar el
+proceso durante el año 2026.
+1.2. Formulación del problema
+1.2.1 Problema general
+Commented [VF6]: Tema
+Commented [VF7]: Contexto y delimitación
+Commented [VF8]: Antecedentes / estudios
+previos
+Commented [VF9]: Problema, brecha y
+relevancia
+Commented [VF10]: Propósito
+¿En qué medida la implementación de automatización robótica de procesos reduce el
+tiempo de registro de solicitudes en una empresa de servicios, Lima, 2026?
+1.2.2 Problemas específicos
+PE1. ¿En qué medida la automatización de la captura de datos reduce el tiempo de
+registro de solicitudes?
+PE2. ¿En qué medida la automatización de las actividades de validación reduce el
+tiempo de registro de solicitudes?
+PE3. ¿En qué medida la integración automática de la información reduce el tiempo de
+registro de solicitudes?
+1.3. Justificación de la investigación
+1.3.1 Justificación teórica
+La investigación permitirá aportar evidencia sobre la aplicación de la automatización
+robótica de procesos y su relación con la eficiencia de procesos administrativos en
+empresas de servicios. Asimismo, permitirá contextualizar la aplicación de RPA en
+actividades de registro y procesamiento de solicitudes dentro de una organización
+peruana.
+1.3.2 Justificación práctica
+La investigación podrá contribuir a reducir el tiempo requerido para registrar las
+solicitudes mediante la automatización de actividades actualmente ejecutadas de
+manera manual. Los resultados podrán brindar información útil a los responsables del
+proceso para identificar oportunidades de automatización y favorecer una atención
+más ágil de las solicitudes gestionadas por la organización.
+1.3.3 Justificación metodológica
+La investigación permitirá establecer un procedimiento para medir y comparar el
+tiempo del proceso de registro antes y después de la implementación de RPA,
+utilizando registros de operación y criterios estandarizados de medición. Este
+procedimiento podrá servir como referencia para evaluar posteriormente otras
+actividades administrativas repetitivas que presenten características similares

@@ -2,6 +2,7 @@ import { useState, type ReactNode } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { WHATSAPP_LINK } from '../constants'
+import { submitOrder, type AdminOrder } from '../lib/ordersService'
 
 type ShippingMethod = 'shalom' | 'delivery' | 'tienda' | null
 
@@ -13,6 +14,7 @@ export default function Checkout() {
     nombres: '', dni: '', celular: '', destino: '', direccion: '', referencia: '', distrito: '',
   })
   const [submitted, setSubmitted] = useState(false)
+  const [sheetResult, setSheetResult] = useState<{ ok: boolean; message: string } | null>(null)
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value })
@@ -22,7 +24,7 @@ export default function Checkout() {
     setMethod(m)
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
     if (method === 'shalom') {
@@ -73,6 +75,40 @@ export default function Checkout() {
     window.open(WHATSAPP_LINK(msg), '_blank')
 
     setSubmitted(true)
+    setSheetResult(null)
+
+    const order: AdminOrder = {
+      estado: 'Nuevo',
+      client: {
+        nombres: form.nombres,
+        celular: form.celular,
+        dni: form.dni,
+        destino: form.destino,
+        direccion: form.direccion,
+        distrito: form.distrito,
+        referencia: form.referencia,
+      },
+      shippingMethod: method as AdminOrder['shippingMethod'],
+      lines: items.map(i => ({
+        name: `${i.product.name} (${i.concentrationType} ${i.ml}ml)`,
+        ml: i.ml,
+        price: i.price,
+        quantity: i.quantity,
+        onDemand: !!i.onDemand,
+      })),
+      subtotal,
+      discount,
+      couponCode,
+      couponDiscount,
+      total,
+      notas: '',
+      source: 'web',
+      fecha: new Date().toISOString(),
+    }
+
+    const res = await submitOrder(order)
+    setSheetResult(res)
+
     setTimeout(() => {
       clearCart()
       navigate('/')
@@ -101,6 +137,11 @@ export default function Checkout() {
           </div>
           <h1 className="text-2xl font-display font-bold text-black mb-3">¡Pedido recibido!</h1>
           <p className="text-black/50 mb-2">Nos pondremos en contacto contigo para coordinar la entrega.</p>
+          {sheetResult && (
+            <p className={`text-sm mb-2 ${sheetResult.ok ? 'text-green-600' : 'text-red-600'}`}>
+              {sheetResult.ok ? 'Tu pedido fue registrado en nuestro sistema.' : sheetResult.message}
+            </p>
+          )}
           <p className="text-black/30 text-sm">Redirigiendo al inicio...</p>
         </div>
       </main>

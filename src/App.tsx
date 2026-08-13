@@ -18,6 +18,7 @@ import Contact from './pages/Contact'
 import Cart from './pages/Cart'
 import Checkout from './pages/Checkout'
 import Promociones from './pages/Promociones'
+import Admin from './pages/Admin'
 import NotFound from './pages/NotFound'
 import { CartProvider } from './context/CartContext'
 import Toast from './components/ui/Toast'
@@ -42,6 +43,7 @@ function App() {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<Checkout />} />
             <Route path="/promociones" element={<Promociones />} />
+            <Route path="/admin" element={<Admin />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>
