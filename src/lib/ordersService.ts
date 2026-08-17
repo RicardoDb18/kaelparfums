@@ -63,6 +63,12 @@ export async function submitOrder(order: AdminOrder): Promise<SubmitResult> {
       if (data && data.ok === false) {
         return { ok: false, message: data.error || 'Error al guardar el pedido' }
       }
+      const sheets: { sheet: string; row: number }[] = data?.sheets ?? []
+      if (sheets.length > 0) {
+        const names = sheets.map(s => s.sheet).join(' y ')
+        const rows = sheets.map(s => s.row).join(', ')
+        return { ok: true, message: `Pedido guardado en ${names} (filas ${rows})` }
+      }
       return { ok: true, message: `Pedido guardado en la fila ${data?.row ?? ''}`.trim() }
     } catch {
       return { ok: true, message: 'Pedido enviado a la hoja de cálculo' }
